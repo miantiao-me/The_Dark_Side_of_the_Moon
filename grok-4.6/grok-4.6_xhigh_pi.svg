@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" preserveAspectRatio="xMidYMid meet">
+  <title>The Dark Side of the Moon</title>
+  <desc>15s looping SVG recreation of the 1080x1080 prism film: classic Hipgnosis cover, rotating cyan glass prism, white ray and dispersing spectrum.</desc>
+
+  <defs>
+    <filter id="glowSoft" x="-80%" y="-80%" width="260%" height="260%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowWide" x="-140%" y="-140%" width="380%" height="380%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="16" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowBloom" x="-180%" y="-180%" width="460%" height="460%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="22" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="0.45 0 0 0 0  0 0.85 0 0 0.04  0 0 1 0 0.07  0 0 0 0.9 0"/>
+    </filter>
+    <filter id="glowEdge" x="-70%" y="-70%" width="240%" height="240%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5.5"/>
+    </filter>
+    <filter id="glowRim" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+    <filter id="blurRay" x="-50%" y="-280%" width="200%" height="660%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.4 2.2"/>
+    </filter>
+    <filter id="blurSpectrum" x="-12%" y="-50%" width="130%" height="200%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="0.8 0.35"/>
+    </filter>
+    <filter id="blurRefract" x="-25%" y="-35%" width="150%" height="170%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="4.5"/>
+    </filter>
+    <filter id="flareBlur" x="-150%" y="-150%" width="400%" height="400%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2.6"/>
+    </filter>
+    <filter id="softAir" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.1"/>
+    </filter>
+
+    <linearGradient id="beamCore" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.42"/>
+      <stop offset="14%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="refractFill" x1="0" y1="0.5" x2="1" y2="0.35">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.82"/>
+      <stop offset="38%" stop-color="#f2f6f8" stop-opacity="0.42"/>
+      <stop offset="78%" stop-color="#d8e6ee" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="glassClassic" cx="50%" cy="60%" r="70%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="78%" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#070d12" stop-opacity="0.96"/>
+    </radialGradient>
+
+    <radialGradient id="glass3d" cx="50%" cy="56%" r="72%">
+      <stop offset="0%" stop-color="#00080c" stop-opacity="0.94"/>
+      <stop offset="60%" stop-color="#03141c" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#0a3340" stop-opacity="0.2"/>
+    </radialGradient>
+
+    <linearGradient id="spectrum3d" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0.12" y2="1">
+      <stop offset="0%" stop-color="#ff2030"/>
+      <stop offset="15%" stop-color="#ff7a12"/>
+      <stop offset="30%" stop-color="#ffe40a"/>
+      <stop offset="46%" stop-color="#3ee028"/>
+      <stop offset="62%" stop-color="#14dcff"/>
+      <stop offset="78%" stop-color="#2a78ff"/>
+      <stop offset="100%" stop-color="#8a48ff"/>
+    </linearGradient>
+
+    <linearGradient id="blueGhost" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0.12" y2="1">
+      <stop offset="0%" stop-color="#1a3a88" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#152a68" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0a1840" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="prismClip">
+      <polygon points="540,270 371,562 709,562"/>
+    </clipPath>
+    <clipPath id="outsidePrism" clipPathUnits="userSpaceOnUse">
+      <path d="M0,0 H1080 V1080 H0 Z M540,270 L371,562 L709,562 Z" clip-rule="evenodd" fill-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="rightOfPrism" clipPathUnits="userSpaceOnUse">
+      <polygon points="540,270 709,562 1080,562 1080,0 540,0"/>
+    </clipPath>
+
+    <linearGradient id="faceL" x1="0" y1="0.2" x2="1" y2="0.4">
+      <stop offset="0%" stop-color="#7fe7ff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#7fe7ff" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="faceR" x1="1" y1="0.2" x2="0" y2="0.4">
+      <stop offset="0%" stop-color="#9ff0ff" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#9ff0ff" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="faceB" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#c8f8ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#c8f8ff" stop-opacity="0.01"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000000"/>
+
+  <!-- classic spectrum: start points sit inside the prism so bands grow out of the right face -->
+  <g id="classicRainbow" clip-path="url(#rightOfPrism)">
+    <g filter="url(#blurSpectrum)">
+    <polygon points="500,360 1080,443 1080,456 508,366" fill="#d0001c"/>
+    <polygon points="508,367 1080,460 1080,473 516,373" fill="#e37a0c"/>
+    <polygon points="516,374 1080,477 1080,490 524,380" fill="#f7f20a"/>
+    <polygon points="524,381 1080,494 1080,507 532,387" fill="#58be30"/>
+    <polygon points="532,388 1080,511 1080,524 540,394" fill="#0eb4dc"/>
+    <polygon points="540,395 1080,528 1080,543 552,404" fill="#705d9f"/>
+    </g>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;0.107;0.173;0.90;0.96;1" values="1;1;0;0;1;1"/>
+  </g>
+
+  <g id="rainbow3d" clip-path="url(#rightOfPrism)">
+    <polygon points="500,378 1080,408 1080,512 530,430" fill="url(#spectrum3d)" opacity="0.96" filter="url(#blurSpectrum)"/>
+    <polygon points="500,378 1080,408 1080,512 530,430" fill="url(#spectrum3d)" opacity="0.32" filter="url(#glowWide)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;0.453;0.507;0.587;0.653;1" values="0;0;1;1;0;0"/>
+  </g>
+
+  <polygon id="blueGhost" points="575,395 1080,415 1080,495 590,440" fill="url(#blueGhost)">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;0.62;0.667;0.72;1" values="0;0;0.85;0;0"/>
+  </polygon>
+
+  <!-- white ray clipped so the core stops at the left face -->
+  <g id="classicBeam" clip-path="url(#outsidePrism)">
+    <line x1="-8" y1="520" x2="467" y2="397" stroke="#ffffff" stroke-width="14" stroke-linecap="round" opacity="0.06"/>
+    <line x1="-8" y1="520" x2="467" y2="397" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round" opacity="0.16" filter="url(#blurRay)"/>
+    <line x1="-8" y1="520" x2="469" y2="396" stroke="url(#beamCore)" stroke-width="2.8" stroke-linecap="butt"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;0.107;0.173;0.90;0.96;1" values="1;1;0;0;1;1"/>
+  </g>
+
+  <g id="beam3d" clip-path="url(#outsidePrism)">
+    <line x1="-8" y1="520" x2="467" y2="397" stroke="#ffffff" stroke-width="18" stroke-linecap="round" opacity="0.09"/>
+    <line x1="-8" y1="520" x2="467" y2="397" stroke="#e8ffff" stroke-width="7" stroke-linecap="round" opacity="0.26" filter="url(#blurRay)"/>
+    <line x1="-8" y1="520" x2="469" y2="396" stroke="#ffffff" stroke-width="3.2" stroke-linecap="butt"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;0.44;0.453;0.587;0.653;1" values="0;0;1;1;0;0"/>
+  </g>
+
+  <!-- classic airbrushed prism -->
+  <g id="classicPrism">
+    <polygon points="540,270 371,562 709,562" fill="none" stroke="#6e8f96" stroke-width="26" opacity="0.22" filter="url(#glowEdge)"/>
+    <polygon points="540,270 371,562 709,562" fill="none" stroke="#97b0b6" stroke-width="12" opacity="0.4" filter="url(#glowRim)"/>
+    <polygon points="540,270 371,562 709,562" fill="url(#glassClassic)"/>
+    <polygon points="540,284 386,554 694,554" fill="none" stroke="#8ea3a8" stroke-width="11" opacity="0.28" filter="url(#glowRim)"/>
+    <polygon points="540,270 371,562 709,562" fill="none" stroke="#c2d0d4" stroke-width="2.15" stroke-linejoin="round" opacity="0.82" filter="url(#softAir)"/>
+    <g clip-path="url(#prismClip)">
+      <polygon points="467,397 598,374 620,410" fill="url(#refractFill)" filter="url(#blurRefract)"/>
+      <polygon points="467,397 530,388 536,408" fill="#ffffff" opacity="0.3" filter="url(#blurRefract)"/>
+    </g>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;0.107;0.18;0.90;0.96;1" values="1;1;0;0;1;1"/>
+  </g>
+
+  <!-- glowing 3D glass prism -->
+  <g id="prism3d">
+    <g filter="url(#glowBloom)">
+      <polygon points="540,270 371,562 709,562" fill="none" stroke="#7eefff" stroke-width="10"/>
+    </g>
+    <polygon points="540,270 371,562 709,562" fill="none" stroke="#8aefff" stroke-width="36" opacity="0.14" filter="url(#glowEdge)"/>
+    <polygon points="540,270 371,562 709,562" fill="url(#glass3d)" stroke="#e4fbff" stroke-width="3.1" stroke-linejoin="round" filter="url(#glowSoft)"/>
+
+    <polygon fill="url(#faceL)" opacity="0.9">
+      <animate attributeName="points" dur="15s" repeatCount="indefinite"
+        keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1"
+        values="540,270 371,562 436,526 540,322;
+                540,270 371,562 436,526 540,322;
+                540,270 371,562 458,532 558,316;
+                540,270 371,562 444,528 546,312;
+                540,270 371,562 438,528 540,320;
+                540,270 371,562 434,526 540,318;
+                540,270 371,562 452,530 554,314;
+                540,270 371,562 416,522 526,316;
+                540,270 371,562 436,526 540,322"/>
+    </polygon>
+    <polygon fill="url(#faceR)" opacity="0.9">
+      <animate attributeName="points" dur="15s" repeatCount="indefinite"
+        keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1"
+        values="540,270 709,562 644,526 540,322;
+                540,270 709,562 644,526 540,322;
+                540,270 709,562 670,520 558,316;
+                540,270 709,562 660,526 546,312;
+                540,270 709,562 642,528 540,320;
+                540,270 709,562 646,528 540,318;
+                540,270 709,562 666,522 554,314;
+                540,270 709,562 628,534 526,316;
+                540,270 709,562 644,526 540,322"/>
+    </polygon>
+    <polygon fill="url(#faceB)" opacity="0.95">
+      <animate attributeName="points" dur="15s" repeatCount="indefinite"
+        keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1"
+        values="371,562 709,562 644,526 436,526;
+                371,562 709,562 644,526 436,526;
+                371,562 709,562 670,520 458,532;
+                371,562 709,562 660,526 444,528;
+                371,562 709,562 642,528 438,528;
+                371,562 709,562 646,528 434,526;
+                371,562 709,562 666,522 452,530;
+                371,562 709,562 628,534 416,522;
+                371,562 709,562 644,526 436,526"/>
+    </polygon>
+
+    <polygon fill="none" stroke="#d2f8ff" stroke-width="2.6" stroke-linejoin="round" filter="url(#glowSoft)">
+      <animate attributeName="points" dur="15s" repeatCount="indefinite"
+        keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1"
+        values="540,322 436,526 644,526;
+                540,322 436,526 644,526;
+                558,316 458,532 670,520;
+                546,312 444,528 660,526;
+                540,320 438,528 642,528;
+                540,318 434,526 646,528;
+                554,314 452,530 666,522;
+                526,316 416,522 628,534;
+                540,322 436,526 644,526"/>
+    </polygon>
+
+    <g stroke="#f2feff" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#glowSoft)">
+      <line x1="540" y1="270">
+        <animate attributeName="x2" dur="15s" repeatCount="indefinite" keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1" values="540;540;558;546;540;540;554;526;540"/>
+        <animate attributeName="y2" dur="15s" repeatCount="indefinite" keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1" values="322;322;316;312;320;318;314;316;322"/>
+      </line>
+      <line x1="371" y1="562">
+        <animate attributeName="x2" dur="15s" repeatCount="indefinite" keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1" values="436;436;458;444;438;434;452;416;436"/>
+        <animate attributeName="y2" dur="15s" repeatCount="indefinite" keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1" values="526;526;532;528;528;526;530;522;526"/>
+      </line>
+      <line x1="709" y1="562">
+        <animate attributeName="x2" dur="15s" repeatCount="indefinite" keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1" values="644;644;670;660;642;646;666;628;644"/>
+        <animate attributeName="y2" dur="15s" repeatCount="indefinite" keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1" values="526;526;520;526;528;528;522;534;526"/>
+      </line>
+    </g>
+
+    <line x1="540" y1="272" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" filter="url(#glowSoft)">
+      <animate attributeName="x2" dur="15s" repeatCount="indefinite"
+        keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1"
+        values="540;540;508;548;540;538;505;575;540"/>
+      <animate attributeName="y2" dur="15s" repeatCount="indefinite"
+        keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1"
+        values="526;526;530;528;528;526;528;528;526"/>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+        keyTimes="0;0.18;0.27;0.38;0.55;0.73;0.82;0.9;1"
+        values="0.12;0.18;0.95;0.5;0.16;0.22;0.95;0.65;0.12"/>
+    </line>
+
+    <g clip-path="url(#prismClip)">
+      <polygon points="467,397 608,384 632,440" fill="#ffffff" opacity="0.2" filter="url(#blurRefract)"/>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+        keyTimes="0;0.453;0.507;0.587;0.653;1" values="0;0;1;1;0;0"/>
+    </g>
+
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;0.107;0.18;0.90;0.96;1" values="0;0;1;1;0;0"/>
+  </g>
+
+  <!-- vertex light spikes -->
+  <g id="flares" filter="url(#flareBlur)" stroke="#f7ffff" stroke-linecap="round" fill="none">
+    <line x1="540" y1="188" x2="540" y2="348" stroke-width="2.3"/>
+    <line x1="540" y1="232" x2="540" y2="308" stroke-width="4.2" opacity="0.45"/>
+    <line x1="500" y1="270" x2="580" y2="270" stroke-width="1.15" opacity="0.65"/>
+    <line x1="540" y1="270" x2="430" y2="458" stroke-width="1.05" opacity="0.55"/>
+    <line x1="540" y1="270" x2="650" y2="458" stroke-width="1.05" opacity="0.55"/>
+    <line x1="318" y1="598" x2="420" y2="528" stroke-width="1.9"/>
+    <line x1="348" y1="530" x2="400" y2="588" stroke-width="1.05" opacity="0.7"/>
+    <line x1="762" y1="598" x2="660" y2="528" stroke-width="1.9"/>
+    <line x1="732" y1="530" x2="680" y2="588" stroke-width="1.05" opacity="0.7"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;0.18;0.27;0.36;0.5;0.73;0.81;0.9;1"
+      values="0;0;1;0.32;0.12;0.18;0.95;0.12;0"/>
+  </g>
+</svg>

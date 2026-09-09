@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">The Dark Side of the Moon</title>
+  <desc id="desc">A luminous glass prism splits a white beam into a seven-color spectrum on a black field.</desc>
+
+  <defs>
+    <radialGradient id="backgroundGlow" cx="50%" cy="39%" r="38%">
+      <stop offset="0" stop-color="#06202a" stop-opacity=".32"/>
+      <stop offset=".42" stop-color="#021016" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="prismGlass" x1="0" y1="0" x2="0.86" y2="1">
+      <stop offset="0" stop-color="#e4fbff" stop-opacity=".54"/>
+      <stop offset=".2" stop-color="#42aec2" stop-opacity=".25"/>
+      <stop offset=".56" stop-color="#06141a" stop-opacity=".08"/>
+      <stop offset=".82" stop-color="#0b2f3a" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#d4faff" stop-opacity=".45"/>
+    </linearGradient>
+
+    <linearGradient id="edgeLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9fbff"/>
+      <stop offset=".36" stop-color="#6cd9ed"/>
+      <stop offset=".72" stop-color="#a4f4ff"/>
+      <stop offset="1" stop-color="#eaffff"/>
+    </linearGradient>
+
+    <linearGradient id="faceLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".75"/>
+      <stop offset=".48" stop-color="#d6faff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#65c9dd" stop-opacity=".06"/>
+    </linearGradient>
+
+    <linearGradient id="internalLight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#83e8fb" stop-opacity=".08"/>
+      <stop offset=".5" stop-color="#eaffff" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#83e8fb" stop-opacity=".08"/>
+    </linearGradient>
+
+    <radialGradient id="impactGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".96"/>
+      <stop offset=".2" stop-color="#c9faff" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#42d7f5" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-120%" y="-120%" width="340%" height="340%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="tightGlow" x="-80%" y="-80%" width="260%" height="260%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="beamGlow" x="-20%" y="-100%" width="140%" height="300%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="canvasClip">
+      <rect width="1080" height="1080"/>
+    </clipPath>
+
+    <g id="spectrumBands">
+      <path d="M 574 369 L 1080 443 L 1080 462 L 580 388 Z" fill="#f21e2e"/>
+      <path d="M 580 388 L 1080 462 L 1080 481 L 584 407 Z" fill="#ff7712"/>
+      <path d="M 584 407 L 1080 481 L 1080 500 L 587 426 Z" fill="#ffda1a"/>
+      <path d="M 587 426 L 1080 500 L 1080 519 L 590 445 Z" fill="#62c936"/>
+      <path d="M 590 445 L 1080 519 L 1080 538 L 593 464 Z" fill="#20cbd9"/>
+      <path d="M 593 464 L 1080 538 L 1080 557 L 596 483 Z" fill="#328bd0"/>
+      <path d="M 596 483 L 1080 557 L 1080 576 L 599 502 Z" fill="#7767b5"/>
+    </g>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000000"/>
+  <rect width="1080" height="1080" fill="url(#backgroundGlow)"/>
+
+  <g clip-path="url(#canvasClip)">
+    <g id="spectrum" opacity=".96">
+      <use xlink:href="#spectrumBands" opacity=".5" filter="url(#beamGlow)"/>
+      <use xlink:href="#spectrumBands"/>
+      <path d="M 582 382 L 1080 456" fill="none" stroke="#fff4c9" stroke-opacity=".3" stroke-width="2"/>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+        values="1;1;.08;.08;.92;.96;.08;.08;1"
+        keyTimes="0;.12;.17;.43;.48;.76;.81;.91;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="15s" repeatCount="indefinite"
+        values="0 0;8 1;0 0;-5 -1;0 0" keyTimes="0;.28;.5;.73;1"/>
+    </g>
+
+    <g id="incidentBeam" opacity="1">
+      <path d="M -28 525 L 474 399" fill="none" stroke="#5cdaf6" stroke-opacity=".42" stroke-width="22" filter="url(#softGlow)"/>
+      <path d="M -28 518 L 474 399" fill="none" stroke="#ffffff" stroke-opacity=".32" stroke-width="10" filter="url(#beamGlow)"/>
+      <path d="M -28 518 L 474 399" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+      <path d="M -28 518 L 474 399" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+        values="1;1;.04;.04;.95;.95;.04;.04;1"
+        keyTimes="0;.12;.17;.43;.48;.76;.81;.91;1"/>
+    </g>
+
+    <g id="prismAura" opacity=".62" fill="none" stroke="#58dcf7" stroke-linejoin="round">
+      <path d="M 542 246 L 350 580 L 734 580 Z" stroke-width="22" stroke-opacity=".15" filter="url(#softGlow)"/>
+      <path d="M 542 260 L 364 574 L 720 574 Z" stroke-width="8" stroke-opacity=".6" filter="url(#tightGlow)"/>
+      <path d="M 542 266 L 374 562 L 710 562 Z" stroke="#dcfbff" stroke-width="3" stroke-opacity=".78"/>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+        values=".44;1;.72;.96;.5;1;.62;.92;.44"
+        keyTimes="0;.12;.25;.4;.54;.67;.78;.9;1"/>
+    </g>
+
+    <g id="prism" stroke-linejoin="round">
+      <path d="M 542 270 L 374 562 L 710 562 Z" fill="url(#prismGlass)" stroke="url(#edgeLight)" stroke-width="4"/>
+      <path d="M 542 279 L 388 550 L 696 550 Z" fill="none" stroke="#9debf5" stroke-opacity=".22" stroke-width="19" filter="url(#softGlow)"/>
+      <path d="M 542 270 L 374 562 L 710 562 Z" fill="none" stroke="#d8fbff" stroke-opacity=".72" stroke-width="2"/>
+
+      <path d="M 542 270 L 542 562" fill="none" stroke="url(#internalLight)" stroke-width="4" filter="url(#tightGlow)" opacity=".18">
+        <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+          values=".12;.68;.12;.9;.18;.72;.12" keyTimes="0;.16;.32;.48;.64;.82;1"/>
+      </path>
+      <path d="M 542 276 L 542 557" fill="none" stroke="#dffcff" stroke-opacity=".25" stroke-width="1"/>
+
+      <path d="M 469 399 L 590 370 L 632 443 Z" fill="url(#faceLight)" opacity=".48" stroke="#eaffff" stroke-opacity=".2" stroke-width="1.5">
+        <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+          values=".44;.58;.12;.12;.52;.58;.1;.1;.44"
+          keyTimes="0;.12;.17;.43;.48;.76;.81;.91;1"/>
+      </path>
+
+      <path d="M 469 399 L 590 370" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="2"/>
+      <path d="M 469 399 L 632 443" fill="none" stroke="#dffcff" stroke-opacity=".22" stroke-width="2"/>
+      <ellipse cx="475" cy="398" rx="34" ry="28" fill="url(#impactGlow)" opacity=".62" filter="url(#tightGlow)">
+        <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values=".5;.86;.34;.7;.5" keyTimes="0;.22;.5;.78;1"/>
+      </ellipse>
+    </g>
+
+    <g id="lightSpill" fill="none" stroke-linecap="round">
+      <path d="M 542 270 L 542 164" stroke="#baf5ff" stroke-opacity=".12" stroke-width="8" filter="url(#softGlow)"/>
+      <path d="M 542 270 L 542 164" stroke="#e4fdff" stroke-opacity=".42" stroke-width="1.5"/>
+      <path d="M 374 562 L 294 642" stroke="#65d9ef" stroke-opacity=".1" stroke-width="8" filter="url(#softGlow)"/>
+      <path d="M 710 562 L 790 642" stroke="#65d9ef" stroke-opacity=".1" stroke-width="8" filter="url(#softGlow)"/>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" values=".45;1;.55;.9;.4;1;.5;.92;.45" keyTimes="0;.12;.25;.4;.54;.67;.78;.9;1"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <title>The Dark Side of the Moon — Prism</title>
+  <defs>
+    <filter id="blur2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="blur5" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="blur8" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="blur16" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="blur24" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="24"/></filter>
+
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0.35 0.35 0.35 0 0"/>
+    </filter>
+
+    <linearGradient id="glassTint" gradientUnits="userSpaceOnUse" x1="540" y1="268" x2="540" y2="562">
+      <stop offset="0" stop-color="#96dcf0" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#96dcf0" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#a0e1f5" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="flareGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="0.4" stop-color="#aae6f5" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#aae6f5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000"/>
+
+  <g filter="url(#blur2)" opacity="0.98">
+    <polygon fill="#e62822" points="600,366.8 1080,437 1080,455 600,368.5"/>
+    <polygon fill="#f7951e" points="600,368.5 1080,455 1080,474 600,370.2"/>
+    <polygon fill="#ffed00" points="600,370.2 1080,474 1080,492 600,371.9"/>
+    <polygon fill="#8dc63f" points="600,371.9 1080,492 1080,511 600,373.6"/>
+    <polygon fill="#28a9e1" points="600,373.6 1080,511 1080,530 600,375.3"/>
+    <polygon fill="#9c83b4" points="600,375.3 1080,530 1080,548 600,377"/>
+  </g>
+
+  <line x1="-10" y1="518.4" x2="466" y2="398" stroke="#ffffff" stroke-width="7" opacity="0.25" filter="url(#blur5)"/>
+  <line x1="-10" y1="518.4" x2="466" y2="398" stroke="#ffffff" stroke-width="4"/>
+
+  <polygon points="540,268 708,562 372,562" fill="#000"/>
+  <polygon points="540,268 708,562 372,562" fill="url(#glassTint)"/>
+  <line x1="420" y1="553" x2="660" y2="553" stroke="#9fe0f2" stroke-width="16" opacity="0.12" filter="url(#blur16)"/>
+
+  <polygon points="463,394.5 469,400.8 602,380 602,368" fill="#f5fbff" opacity="0.95"/>
+  <polygon points="463,394.5 469,400.8 602,380 602,368" fill="#e8f8ff" opacity="0.5" filter="url(#blur2)"/>
+
+  <path d="M540 268 L708 562 L372 562 Z" fill="none" stroke="#f2fbff" stroke-width="2.5" opacity="0.9"/>
+
+  <g opacity="0.12">
+    <animate attributeName="opacity" values="0.12;1;0.12" keyTimes="0;0.5;1" dur="15s" repeatCount="indefinite"/>
+    <path d="M540 268 L708 562 L372 562 Z" fill="none" stroke="#54b6d6" stroke-width="24" opacity="0.3" filter="url(#blur24)"/>
+    <path d="M540 268 L708 562 L372 562 Z" fill="none" stroke="#8fd8ec" stroke-width="9" opacity="0.55" filter="url(#blur8)"/>
+    <circle cx="540" cy="268" r="95" fill="url(#flareGrad)"/>
+    <line x1="540" y1="150" x2="540" y2="390" stroke="#dff6ff" stroke-width="7" opacity="0.7" filter="url(#blur5)"/>
+    <line x1="540" y1="215" x2="540" y2="325" stroke="#ffffff" stroke-width="2" opacity="0.9" filter="url(#blur2)"/>
+    <line x1="-10" y1="518.4" x2="466" y2="398" stroke="#ffffff" stroke-width="6" opacity="0.6" filter="url(#blur5)"/>
+    <polygon points="600,366.8 1080,437 1080,548 600,377" fill="#ffffff" opacity="0.12" filter="url(#blur8)"/>
+  </g>
+
+  <rect width="1080" height="1080" filter="url(#grain)" opacity="0.05"/>
+</svg>

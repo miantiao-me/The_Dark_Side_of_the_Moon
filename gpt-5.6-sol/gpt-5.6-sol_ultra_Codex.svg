@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1080" height="1080" viewBox="0 0 1080 1080"
+     role="img" aria-labelledby="title description">
+  <title id="title">The Dark Side of the Moon — animated prism</title>
+  <desc id="description">A glass prism refracts a white beam into a six-colour spectrum on a black field. The light retracts, the prism pulses, and the beam returns over a seamless fifteen-second loop.</desc>
+
+  <defs>
+    <clipPath id="prism-clip" clipPathUnits="userSpaceOnUse">
+      <path d="M542 268 L374 562 L710 562 Z"/>
+    </clipPath>
+
+    <clipPath id="beam-reveal" clipPathUnits="userSpaceOnUse">
+      <rect x="-30" y="360" width="510" height="190">
+        <animate attributeName="x" dur="15s" repeatCount="indefinite"
+          keyTimes="0;.08;.11;.12;.413333;.463333;.563333;.6;.61;.9;.94;1"
+          values="-30;-30;480;-30;-30;-30;-30;480;-30;-30;-30;-30"/>
+        <animate attributeName="width" dur="15s" repeatCount="indefinite"
+          keyTimes="0;.08;.11;.12;.413333;.463333;.563333;.6;.61;.9;.94;1"
+          values="510;510;0;0;0;510;510;0;0;0;510;510"/>
+      </rect>
+    </clipPath>
+
+    <clipPath id="spectrum-reveal" clipPathUnits="userSpaceOnUse">
+      <rect x="590" y="330" width="510" height="250">
+        <animate attributeName="x" dur="15s" repeatCount="indefinite"
+          keyTimes="0;.126667;.146667;.153333;.458667;.48;.603333;.634667;.641333;.94;.96;1"
+          values="590;590;1080;590;590;590;590;1080;590;590;590;590"/>
+        <animate attributeName="width" dur="15s" repeatCount="indefinite"
+          keyTimes="0;.126667;.146667;.153333;.458667;.48;.603333;.634667;.641333;.94;.96;1"
+          values="510;510;0;0;0;510;510;0;0;0;510;510"/>
+      </rect>
+    </clipPath>
+
+    <linearGradient id="prism-face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dffaff" stop-opacity=".2"/>
+      <stop offset=".28" stop-color="#0a3340" stop-opacity=".32"/>
+      <stop offset=".72" stop-color="#010507" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#87bcc8" stop-opacity=".23"/>
+    </linearGradient>
+
+    <linearGradient id="left-face" x1="374" y1="562" x2="556" y2="326" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d8fbff" stop-opacity=".16"/>
+      <stop offset=".35" stop-color="#063643" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#c8f7ff" stop-opacity=".22"/>
+    </linearGradient>
+
+    <linearGradient id="right-face" x1="710" y1="562" x2="542" y2="268" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b9edf7" stop-opacity=".13"/>
+      <stop offset=".58" stop-color="#04141a" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#e8fcff" stop-opacity=".16"/>
+    </linearGradient>
+
+    <linearGradient id="edge-light" x1="394" y1="552" x2="627" y2="282" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b9eaf2"/>
+      <stop offset=".46" stop-color="#4b9daf"/>
+      <stop offset=".78" stop-color="#effdff"/>
+      <stop offset="1" stop-color="#c2e9ef"/>
+    </linearGradient>
+
+    <linearGradient id="internal-light" x1="466" y1="400" x2="635" y2="403" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".96"/>
+      <stop offset=".45" stop-color="#dff7fb" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#b9dce4" stop-opacity=".35"/>
+    </linearGradient>
+
+    <radialGradient id="vertex-halo">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset=".18" stop-color="#b9f1ff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#45b8d7" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="red-flare">
+      <stop offset="0" stop-color="#ff3154" stop-opacity=".92"/>
+      <stop offset=".26" stop-color="#f20842" stop-opacity=".52"/>
+      <stop offset=".67" stop-color="#8b0036" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#41002a" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="blue-flare">
+      <stop offset="0" stop-color="#304cff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#101c9b" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="top-ray" x1="542" y1="268" x2="542" y2="178" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dffaff" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#7fe8ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="left-ray" x1="374" y1="562" x2="296" y2="649" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dffaff" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#7fe8ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="right-ray" x1="710" y1="562" x2="792" y2="648" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dffaff" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#7fe8ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="centre-ray" x1="542" y1="541" x2="542" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dffaff" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#7fe8ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <filter id="wide-glow" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+
+    <filter id="beam-glow" x="-10%" y="-100%" width="120%" height="300%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="4.5"/>
+    </filter>
+
+    <filter id="glass-grain" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" seed="23" result="noise"/>
+      <feColorMatrix in="noise" type="matrix"
+        values=".55 0 0 0 .45
+                .55 0 0 0 .72
+                .55 0 0 0 .78
+                0 0 0 .28 0" result="silver-noise"/>
+      <feComposite in="silver-noise" in2="SourceGraphic" operator="in" result="cut-noise"/>
+      <feBlend in="SourceGraphic" in2="cut-noise" mode="screen"/>
+    </filter>
+
+    <g id="spectrum-bands">
+      <path d="M599 370 L1080 443 L1080 461 L606 384 Z" fill="#e00a17"/>
+      <path d="M606 384 L1080 461 L1080 478 L611 396 Z" fill="#ed7d05"/>
+      <path d="M611 396 L1080 478 L1080 495 L616 407 Z" fill="#fbe400"/>
+      <path d="M616 407 L1080 495 L1080 513 L621 418 Z" fill="#54ab33"/>
+      <path d="M621 418 L1080 513 L1080 531 L626 431 Z" fill="#00a2dd"/>
+      <path d="M626 431 L1080 531 L1080 549 L632 444 Z" fill="#6d61a1"/>
+    </g>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000000"/>
+
+  <!-- The brief colour bloom that trails the second spectrum. -->
+  <g opacity="0">
+    <ellipse cx="744" cy="425" rx="272" ry="112" fill="url(#red-flare)" filter="url(#wide-glow)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.6;.608;.616;.626;.64;1" values="0;0;.28;1;.55;0;0"/>
+  </g>
+  <g opacity="0">
+    <ellipse cx="1010" cy="473" rx="166" ry="93" fill="url(#blue-flare)" filter="url(#wide-glow)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.614;.625;.638;.655;1" values="0;0;.42;.14;0;0"/>
+  </g>
+
+  <!-- Spectrum sits behind the glass and is revealed from the prism outwards. -->
+  <g clip-path="url(#spectrum-reveal)">
+    <use xlink:href="#spectrum-bands" opacity=".43" filter="url(#soft-glow)"/>
+    <use xlink:href="#spectrum-bands"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.126667;.146667;.458667;.48;.56;.603333;.634667;.94;.96;1"
+      values="1;1;0;0;1;1;1;0;0;1;1"/>
+  </g>
+
+  <!-- The incident ray uses an animated rectangular reveal for growth and retraction. -->
+  <g clip-path="url(#beam-reveal)">
+    <path d="M-28 526 L468 400" fill="none" stroke="#ffffff" stroke-width="14" opacity=".3" filter="url(#beam-glow)"/>
+    <path d="M-28 526 L468 400" fill="none" stroke="#ffffff" stroke-width="5.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Quiet glass body remains present through the whole loop. -->
+  <path d="M542 268 L374 562 L710 562 Z" fill="#010405"/>
+  <path d="M542 268 L374 562 L710 562 Z" fill="url(#prism-face)" opacity=".3"/>
+  <path d="M542 268 L542 541 L374 562 Z" fill="url(#left-face)" opacity=".46"/>
+  <path d="M542 268 L710 562 L542 541 Z" fill="url(#right-face)" opacity=".46"/>
+
+  <!-- A restrained grain gives the otherwise geometric prism its smoky surface. -->
+  <path d="M542 268 L374 562 L710 562 Z" fill="#b5dce5" opacity=".045" filter="url(#glass-grain)"/>
+
+  <!-- Refracted white light is clipped to the glass. -->
+  <g clip-path="url(#prism-clip)" opacity=".7">
+    <path d="M462 398 L602 369 L635 446 Z" fill="url(#internal-light)" filter="url(#glass-grain)"/>
+    <path d="M462 398 L602 369" fill="none" stroke="#f7ffff" stroke-width="2.4" opacity=".8"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.08;.12;.146667;.458667;.48;.563333;.603333;.634667;.94;.96;1"
+      values=".72;.72;.2;0;0;.78;.82;.3;0;0;.72;.72"/>
+  </g>
+
+  <!-- Moving internal seams appear while the external beams are absent. -->
+  <g fill="none" stroke="#bff5ff" stroke-linecap="round" opacity=".08">
+    <path d="M542 273 L542 541" stroke-width="5" filter="url(#soft-glow)" opacity=".6">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite"
+        keyTimes="0;.146667;.233333;.34;.48;.634667;.72;.82;.96;1"
+        values="M542 273 L542 541;M542 273 L552 541;M542 273 L510 541;M542 273 L548 541;M542 273 L542 541;M542 273 L568 541;M542 273 L529 541;M542 273 L557 541;M542 273 L542 541;M542 273 L542 541"/>
+    </path>
+    <path d="M542 273 L542 541" stroke-width="2.8">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite"
+        keyTimes="0;.146667;.233333;.34;.48;.634667;.72;.82;.96;1"
+        values="M542 273 L542 541;M542 273 L552 541;M542 273 L510 541;M542 273 L548 541;M542 273 L542 541;M542 273 L568 541;M542 273 L529 541;M542 273 L557 541;M542 273 L542 541;M542 273 L542 541"/>
+    </path>
+    <path d="M374 562 L542 541" stroke-width="4" filter="url(#soft-glow)" opacity=".55">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite"
+        keyTimes="0;.146667;.233333;.34;.48;.634667;.72;.82;.96;1"
+        values="M374 562 L542 541;M374 562 L552 541;M374 562 L510 541;M374 562 L548 541;M374 562 L542 541;M374 562 L568 541;M374 562 L529 541;M374 562 L557 541;M374 562 L542 541;M374 562 L542 541"/>
+    </path>
+    <path d="M374 562 L542 541" stroke-width="2" opacity=".78">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite"
+        keyTimes="0;.146667;.233333;.34;.48;.634667;.72;.82;.96;1"
+        values="M374 562 L542 541;M374 562 L552 541;M374 562 L510 541;M374 562 L548 541;M374 562 L542 541;M374 562 L568 541;M374 562 L529 541;M374 562 L557 541;M374 562 L542 541;M374 562 L542 541"/>
+    </path>
+    <path d="M710 562 L542 541" stroke-width="4" filter="url(#soft-glow)" opacity=".55">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite"
+        keyTimes="0;.146667;.233333;.34;.48;.634667;.72;.82;.96;1"
+        values="M710 562 L542 541;M710 562 L552 541;M710 562 L510 541;M710 562 L548 541;M710 562 L542 541;M710 562 L568 541;M710 562 L529 541;M710 562 L557 541;M710 562 L542 541;M710 562 L542 541"/>
+    </path>
+    <path d="M710 562 L542 541" stroke-width="2" opacity=".78">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite"
+        keyTimes="0;.146667;.233333;.34;.48;.634667;.72;.82;.96;1"
+        values="M710 562 L542 541;M710 562 L552 541;M710 562 L510 541;M710 562 L548 541;M710 562 L542 541;M710 562 L568 541;M710 562 L529 541;M710 562 L557 541;M710 562 L542 541;M710 562 L542 541"/>
+    </path>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.08;.146667;.2;.28;.413333;.48;.563333;.634667;.7;.8;.9;.96;1"
+      values=".08;.08;.5;.9;.68;.34;.08;.12;.92;.62;.86;.28;.08;.08"/>
+  </g>
+
+  <!-- Layered edges preserve a crisp silhouette inside a breathing halo. -->
+  <path d="M542 268 L374 562 L710 562 Z" fill="none" stroke="#7de8fa" stroke-width="24" opacity=".1" filter="url(#wide-glow)">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.08;.146667;.2;.233333;.28;.34;.413333;.48;.56;.634667;.7;.8;.9;.96;1"
+      values=".08;.08;.18;.45;.68;.38;.55;.16;.52;.35;.62;.32;.5;.12;.08;.08"/>
+  </path>
+  <path d="M542 268 L374 562 L710 562 Z" fill="none" stroke="#b9f3ff" stroke-width="11" opacity=".25" filter="url(#soft-glow)">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.08;.146667;.2;.233333;.28;.34;.413333;.48;.56;.634667;.7;.8;.9;.96;1"
+      values=".24;.24;.46;.82;1;.72;.9;.38;.92;.68;1;.72;.94;.34;.24;.24"/>
+  </path>
+  <path d="M542 268 L374 562 L710 562 Z" fill="none" stroke="url(#edge-light)" stroke-width="7.5" stroke-linejoin="miter" opacity=".72" filter="url(#glass-grain)"/>
+  <path d="M542 268 L374 562 L710 562 Z" fill="none" stroke="#e9fcff" stroke-width="2.1" stroke-linejoin="miter" opacity=".82">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.146667;.233333;.34;.48;.634667;.72;.82;.96;1"
+      values=".72;.76;1;.84;.78;1;.8;1;.72;.72"/>
+  </path>
+
+  <!-- Corner rays and halos make the isolated-prism phases flare without changing geometry. -->
+  <g opacity="0">
+    <path d="M542 273 L542 178" stroke="url(#top-ray)" stroke-width="11" filter="url(#soft-glow)"/>
+    <path d="M542 268 L542 195" stroke="url(#top-ray)" stroke-width="2.2"/>
+    <path d="M374 562 L296 649" stroke="url(#left-ray)" stroke-width="13" filter="url(#soft-glow)"/>
+    <path d="M710 562 L792 648" stroke="url(#right-ray)" stroke-width="13" filter="url(#soft-glow)"/>
+    <path d="M542 541 L542 650" stroke="url(#centre-ray)" stroke-width="8" filter="url(#soft-glow)"/>
+    <ellipse cx="542" cy="268" rx="55" ry="62" fill="url(#vertex-halo)" filter="url(#soft-glow)"/>
+    <ellipse cx="374" cy="562" rx="48" ry="42" fill="url(#vertex-halo)" filter="url(#soft-glow)"/>
+    <ellipse cx="710" cy="562" rx="48" ry="42" fill="url(#vertex-halo)" filter="url(#soft-glow)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      keyTimes="0;.146667;.2;.233333;.28;.34;.413333;.48;.56;.634667;.7;.76;.82;.9;.96;1"
+      values="0;.08;.48;.84;.42;.72;.12;.45;.28;.82;.34;.66;.22;.05;0;0"/>
+  </g>
+</svg>

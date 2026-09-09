@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <title>Prism Spectrum Loop</title>
+  <desc>A looping animation of a triangular prism splitting an incoming beam of light into a six-band spectrum, dissolving into a glowing wireframe outline, then reforming.</desc>
+
+  <style>
+    .glow-group { mix-blend-mode: screen; animation: glowFade 7.5s ease-in-out infinite; }
+    .cv-main    { animation: mainFade 7.5s ease-in-out infinite; }
+    .cv-beam    { animation: beamFade 7.5s ease-in-out infinite; }
+    .cv-rainbow { animation: rainbowFade 7.5s ease-in-out infinite; }
+    .halo       { animation: haloPulse 3.1s ease-in-out infinite; }
+    .apex-core  { transform-box: view-box; transform-origin: 540px 235px; animation: corePulse 2.3s ease-in-out infinite; }
+
+    @keyframes mainFade {
+      0%, 20% { opacity: 1; }
+      32%     { opacity: 0; }
+      74%     { opacity: 0; }
+      88%, 100% { opacity: 1; }
+    }
+    @keyframes beamFade {
+      0%, 18% { opacity: 1; }
+      28%     { opacity: 0; }
+      72%     { opacity: 0; }
+      84%, 100% { opacity: 1; }
+    }
+    @keyframes rainbowFade {
+      0%, 14% { opacity: 1; }
+      24%     { opacity: 0; }
+      80%     { opacity: 0; }
+      92%, 100% { opacity: 1; }
+    }
+    @keyframes glowFade {
+      0%, 26% { opacity: 0; }
+      40%     { opacity: 1; }
+      76%     { opacity: 1; }
+      90%, 100% { opacity: 0; }
+    }
+    @keyframes haloPulse {
+      0%, 100% { opacity: 0.8; }
+      50%      { opacity: 1; }
+    }
+    @keyframes corePulse {
+      0%, 100% { opacity: 0.7; transform: scale(0.88); }
+      50%      { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="leftFaceGrad" gradientUnits="userSpaceOnUse" cx="540" cy="235" r="340">
+      <stop offset="0%"   stop-color="#3a5560"/>
+      <stop offset="45%"  stop-color="#0c1c21"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <radialGradient id="rightFaceGrad" gradientUnits="userSpaceOnUse" cx="540" cy="235" r="340">
+      <stop offset="0%"   stop-color="#9fb9c2"/>
+      <stop offset="35%"  stop-color="#173239"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="bottomFaceGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#26454d"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <radialGradient id="apexCoreGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="45%"  stop-color="#bfe9f2" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#bfe9f2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rayGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#eafcff" stop-opacity="0"/>
+      <stop offset="42%"  stop-color="#eafcff" stop-opacity="0.15"/>
+      <stop offset="50%"  stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="58%"  stop-color="#eafcff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#eafcff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="groundGlowGrad">
+      <stop offset="0%"   stop-color="#3d6672" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="neonBlur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="bigBlur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+    <filter id="rayBlur" x="-300%" y="-20%" width="700%" height="140%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1080" height="1080" fill="#000000"/>
+
+  <!-- ================= glowing wireframe state ================= -->
+  <g class="glow-group" opacity="0">
+    <ellipse cx="540" cy="612" rx="200" ry="70" fill="url(#groundGlowGrad)" filter="url(#bigBlur)"/>
+    <rect x="532" y="-165" width="16" height="800" fill="url(#rayGrad)" filter="url(#rayBlur)"/>
+
+    <g class="halo" fill="none" stroke="#bfe9f2" stroke-width="14" stroke-linejoin="round" stroke-linecap="round" filter="url(#neonBlur)">
+      <polygon points="540,235 720,572 360,572"/>
+      <polyline points="360,572 540,558 720,572"/>
+      <line x1="540" y1="235" x2="540" y2="558"/>
+    </g>
+    <g fill="none" stroke="#eafdff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+      <polygon points="540,235 720,572 360,572"/>
+      <polyline points="360,572 540,558 720,572"/>
+      <line x1="540" y1="235" x2="540" y2="558"/>
+    </g>
+
+    <circle class="apex-core" cx="540" cy="235" r="26" fill="url(#apexCoreGrad)" filter="url(#neonBlur)"/>
+  </g>
+
+  <!-- ================= full color prism + beam + spectrum ================= -->
+  <g class="cv-beam">
+    <line x1="-20" y1="523" x2="452" y2="403" stroke="#ffffff" stroke-width="10" stroke-linecap="round" filter="url(#softBlur)" opacity="0.55"/>
+    <line x1="-20" y1="523" x2="452" y2="403" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round"/>
+  </g>
+
+  <g class="cv-main">
+    <polygon points="540,235 540,558 360,572" fill="url(#leftFaceGrad)"/>
+    <polygon points="540,235 720,572 540,558" fill="url(#rightFaceGrad)"/>
+    <polygon points="360,572 720,572 540,558" fill="url(#bottomFaceGrad)"/>
+    <g fill="none" stroke="#cfe9ef" stroke-width="2" stroke-linejoin="round" opacity="0.8">
+      <polygon points="540,235 720,572 360,572"/>
+      <polyline points="360,572 540,558 720,572"/>
+      <line x1="540" y1="235" x2="540" y2="558"/>
+    </g>
+  </g>
+
+  <g class="cv-rainbow" filter="url(#softBlur)">
+    <polygon points="630,374 1080,442 1080,460 630,384" fill="#e00b18"/>
+    <polygon points="630,384 1080,460 1080,479 630,394" fill="#ec7b06"/>
+    <polygon points="630,394 1080,479 1080,497 630,404" fill="#fbe400"/>
+    <polygon points="630,404 1080,497 1080,515 630,414" fill="#51a831"/>
+    <polygon points="630,414 1080,515 1080,534 630,424" fill="#00a4e1"/>
+    <polygon points="630,424 1080,534 1080,552 630,434" fill="#6e61a0"/>
+  </g>
+</svg>

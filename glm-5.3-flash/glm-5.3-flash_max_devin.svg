@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <title>The Dark Side of the Moon — glm-5-3-flash / max / devin</title>
+  <!-- 15s 循环：经典封面(0-2s) → 霓虹3D金字塔旋转(2-12s, 7-9s光束回归) → 经典封面(13-15s) -->
+
+  <defs>
+    <linearGradient id="glassFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dfe9ee" stop-opacity="0.5"/>
+      <stop offset="0.3" stop-color="#8fa9b8" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#05090c" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#c2d2da"/>
+      <stop offset="1" stop-color="#eef4f7"/>
+    </linearGradient>
+    <radialGradient id="apexGlow">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.4" stop-color="#dff4ff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#dff4ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="neon" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="neonWide" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000"/>
+
+  <!-- ===== 经典封面组：彩虹(底层) + 玻璃棱镜 + 白光束 ===== -->
+  <g>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear"
+      values="1;1;0;0;0.3;0.3;0;0;0.3;1;1"
+      keyTimes="0;0.107;0.133;0.46;0.493;0.52;0.547;0.813;0.86;0.92;1"/>
+
+    <!-- 彩虹出射光束：6 色扇形，左端藏于棱镜之后 -->
+    <g id="rainbow">
+      <polygon points="560,390 1080,372 1080,401" fill="#df2930"/>
+      <polygon points="560,390 1080,401 1080,430" fill="#f28a1e"/>
+      <polygon points="560,390 1080,430 1080,459" fill="#f5d413"/>
+      <polygon points="560,390 1080,459 1080,488" fill="#3aaa35"/>
+      <polygon points="560,390 1080,488 1080,517" fill="#1e9cd7"/>
+      <polygon points="560,390 1080,517 1080,546" fill="#8a6fc8"/>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear"
+        values="1;1;0;0;1;1;0;0;1;1"
+        keyTimes="0;0.107;0.133;0.46;0.5;0.613;0.667;0.893;0.933;1"/>
+    </g>
+
+    <!-- 玻璃棱镜 -->
+    <polygon points="540,266 376,566 704,566" fill="url(#glassFill)"/>
+    <polygon points="540,280 480,556 600,556" fill="#ffffff" opacity="0.05" filter="url(#soft)"/>
+    <polygon points="540,266 376,566 704,566" fill="none" stroke="url(#edge)" stroke-width="3.5"/>
+    <line x1="376" y1="566" x2="704" y2="566" stroke="#ffffff" stroke-width="4" opacity="0.85" filter="url(#soft)"/>
+    <circle cx="540" cy="266" r="7" fill="#ffffff" opacity="0.9" filter="url(#soft)"/>
+
+    <!-- 白色入射光束：dashoffset 1→0 = 从左向右伸入 -->
+    <line x1="0" y1="494" x2="467" y2="400" stroke="#ffffff" stroke-width="5" stroke-linecap="round"
+          pathLength="1" stroke-dasharray="1">
+      <animate attributeName="stroke-dashoffset" dur="15s" repeatCount="indefinite" calcMode="linear"
+        values="1;0;0;1;0;0;1;0;0"
+        keyTimes="0;0.067;0.133;0.46;0.5;0.667;0.893;0.933;1"/>
+    </line>
+    <line x1="0" y1="494" x2="467" y2="400" stroke="#ffffff" stroke-width="10" opacity="0.25" filter="url(#soft)">
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear"
+        values="0.25;0.25;0;0;0.25;0.25;0;0;0.25;0.25"
+        keyTimes="0;0.107;0.133;0.46;0.5;0.613;0.667;0.893;0.933;1"/>
+    </line>
+
+  </g>
+
+  <!-- ===== 霓虹 3D 金字塔（线框绕中轴旋转） ===== -->
+  <g opacity="0">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear"
+      values="0;0;1;1;0;0"
+      keyTimes="0;0.133;0.16;0.79;0.827;1"/>
+
+    <g stroke="#bfeeff" stroke-width="4" fill="none" stroke-linejoin="round" filter="url(#neonWide)" opacity="0.7">
+      <polygon points="540,270 390,630 690,630"/>
+      <polygon points="390,630 540,672 690,630" fill="none"/>
+      <polygon points="540,270 470,648">
+        <animate attributeName="points" dur="4s" repeatCount="indefinite" calcMode="linear"
+          values="540,270 470,648; 540,270 610,648; 540,270 470,648"/>
+      </polygon>
+      <polygon points="390,630 540,672 690,630" fill="none">
+        <animate attributeName="points" dur="4s" repeatCount="indefinite" calcMode="linear"
+          values="390,630 500,672 690,630; 390,630 580,672 690,630; 390,630 500,672 690,630"/>
+      </polygon>
+    </g>
+    <g stroke="#eafaff" stroke-width="2.5" fill="none">
+      <polygon points="540,270 390,630 690,630"/>
+      <line x1="390" y1="630" x2="540" y2="672"/>
+      <line x1="690" y1="630" x2="540" y2="672"/>
+      <line x1="540" y1="270" x2="470" y2="648">
+        <animate attributeName="x2" dur="4s" repeatCount="indefinite" calcMode="linear" values="470;610;470"/>
+        <animate attributeName="y2" dur="4s" repeatCount="indefinite" calcMode="linear" values="648;652;648"/>
+      </line>
+    </g>
+    <circle cx="540" cy="270" r="34" fill="url(#apexGlow)"/>
+    <circle cx="540" cy="270" r="6" fill="#ffffff"/>
+  </g>
+</svg>

@@ -1,0 +1,445 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <style>
+      :root {
+        --dur: 15s;
+      }
+
+      /* Background */
+      .bg { fill: #000000; }
+
+      /* White Beam Animations */
+      .white-beam-main {
+        stroke: #ffffff;
+        stroke-width: 3.5px;
+        stroke-linecap: square;
+        filter: url(#glow-soft);
+        stroke-dasharray: 480;
+        animation: animWhiteMain var(--dur) cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+      }
+
+      .white-beam-glow {
+        stroke: #ffffff;
+        stroke-width: 8px;
+        stroke-opacity: 0.3;
+        stroke-linecap: square;
+        filter: url(#glow-mid);
+        stroke-dasharray: 480;
+        animation: animWhiteMain var(--dur) cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+      }
+
+      @keyframes animWhiteMain {
+        0%, 7.33% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        10.67% {
+          stroke-dashoffset: -480;
+          opacity: 0;
+        }
+        10.68%, 43.99% {
+          stroke-dashoffset: 480;
+          opacity: 0;
+        }
+        44.0% {
+          stroke-dashoffset: 480;
+          opacity: 1;
+        }
+        46.67%, 57.33% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        60.67% {
+          stroke-dashoffset: -480;
+          opacity: 0;
+        }
+        60.68%, 90.66% {
+          stroke-dashoffset: 480;
+          opacity: 0;
+        }
+        90.67% {
+          stroke-dashoffset: 480;
+          opacity: 1;
+        }
+        94.67%, 100% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+      }
+
+      /* White Pulse Traveling Wave (Heartbeat Pulses) */
+      .white-pulse {
+        stroke: #ffffff;
+        stroke-width: 4px;
+        stroke-linecap: round;
+        filter: url(#glow-mid);
+        stroke-dasharray: 140 480;
+        animation: animWhitePulse var(--dur) linear infinite;
+      }
+
+      @keyframes animWhitePulse {
+        0%, 13.33% {
+          opacity: 0;
+          stroke-dashoffset: 620;
+        }
+        /* Pulse 1: 2.0s -> 2.7s (13.33% -> 18.0%) */
+        13.34% { opacity: 1; stroke-dashoffset: 620; }
+        18.0%  { stroke-dashoffset: 0; opacity: 1; }
+        18.01% { opacity: 0; stroke-dashoffset: 620; }
+
+        /* Pulse 2: 3.1s -> 3.8s (20.67% -> 25.33%) */
+        20.67% { opacity: 1; stroke-dashoffset: 620; }
+        25.33% { stroke-dashoffset: 0; opacity: 1; }
+        25.34% { opacity: 0; stroke-dashoffset: 620; }
+
+        /* Pulse 3: 4.2s -> 4.9s (28.0% -> 32.67%) */
+        28.0%  { opacity: 1; stroke-dashoffset: 620; }
+        32.67% { stroke-dashoffset: 0; opacity: 1; }
+        32.68% { opacity: 0; stroke-dashoffset: 620; }
+
+        /* Pulse 4: 5.3s -> 6.0s (35.33% -> 40.0%) */
+        35.33% { opacity: 1; stroke-dashoffset: 620; }
+        40.0%  { stroke-dashoffset: 0; opacity: 1; }
+        40.01% { opacity: 0; stroke-dashoffset: 620; }
+
+        /* Pause for Climax Surge */
+        40.02%, 61.33% { opacity: 0; stroke-dashoffset: 620; }
+
+        /* Pulse 5: 9.3s -> 10.0s (62.0% -> 66.67%) */
+        62.0%  { opacity: 1; stroke-dashoffset: 620; }
+        66.67% { stroke-dashoffset: 0; opacity: 1; }
+        66.68% { opacity: 0; stroke-dashoffset: 620; }
+
+        /* Pulse 6: 10.4s -> 11.1s (69.33% -> 74.0%) */
+        69.33% { opacity: 1; stroke-dashoffset: 620; }
+        74.0%  { stroke-dashoffset: 0; opacity: 1; }
+        74.01% { opacity: 0; stroke-dashoffset: 620; }
+
+        /* Pulse 7: 11.5s -> 12.2s (76.67% -> 81.33%) */
+        76.67% { opacity: 1; stroke-dashoffset: 620; }
+        81.33% { stroke-dashoffset: 0; opacity: 1; }
+        81.34% { opacity: 0; stroke-dashoffset: 620; }
+
+        /* Pulse 8: 12.6s -> 13.3s (84.0% -> 88.67%) */
+        84.0%  { opacity: 1; stroke-dashoffset: 620; }
+        88.67% { stroke-dashoffset: 0; opacity: 1; }
+        88.68%, 100% { opacity: 0; stroke-dashoffset: 620; }
+      }
+
+      /* Prism Inner Refraction */
+      .prism-inner {
+        fill: url(#innerRefractionGrad);
+        filter: url(#glow-soft);
+        animation: animPrismInner var(--dur) ease-in-out infinite;
+      }
+
+      @keyframes animPrismInner {
+        0%, 7.33% { opacity: 0.85; }
+        10.67% { opacity: 0.15; }
+        /* Pulses 1-4 */
+        18.0%  { opacity: 0.85; }
+        20.0%  { opacity: 0.25; }
+        25.33% { opacity: 0.85; }
+        27.33% { opacity: 0.25; }
+        32.67% { opacity: 0.85; }
+        34.67% { opacity: 0.25; }
+        40.0%  { opacity: 0.85; }
+        42.0%  { opacity: 0.2;  }
+        /* Climax Surge */
+        44.0%  { opacity: 0.5; }
+        46.67%, 57.33% { opacity: 1.0; filter: url(#glow-intense); }
+        60.67% { opacity: 0.2; }
+        /* Pulses 5-8 */
+        66.67% { opacity: 0.85; }
+        68.67% { opacity: 0.25; }
+        74.0%  { opacity: 0.85; }
+        76.0%  { opacity: 0.25; }
+        81.33% { opacity: 0.85; }
+        83.33% { opacity: 0.25; }
+        88.67% { opacity: 0.85; }
+        90.67% { opacity: 0.2;  }
+        /* Return to stillness */
+        94.67%, 100% { opacity: 0.85; filter: url(#glow-soft); }
+      }
+
+      /* Prism Wide Ambient Bloom */
+      .prism-bloom {
+        transform-origin: 540px 420px;
+        animation: animPrismBloom var(--dur) ease-in-out infinite;
+      }
+
+      @keyframes animPrismBloom {
+        0%, 43.99% { opacity: 0; transform: scale(0.6); }
+        44.0% { opacity: 0.15; transform: scale(0.75); }
+        46.67% { opacity: 0.95; transform: scale(1.1); }
+        53.33% { opacity: 1.0; transform: scale(1.2); }
+        57.33% { opacity: 0.8; transform: scale(1.05); }
+        60.67% { opacity: 0; transform: scale(0.6); }
+        100% { opacity: 0; transform: scale(0.6); }
+      }
+
+      /* Prism Triangle Wireframe Outline */
+      .prism-line {
+        fill: none;
+        stroke: url(#prismLineGrad);
+        stroke-width: 2.2px;
+        stroke-linejoin: round;
+        animation: animPrismLine var(--dur) ease-in-out infinite;
+      }
+
+      @keyframes animPrismLine {
+        0%, 43.99% { stroke: url(#prismLineGrad); filter: none; }
+        46.67%, 57.33% { stroke: #ffffff; filter: url(#glow-mid); }
+        60.0%, 100% { stroke: url(#prismLineGrad); filter: none; }
+      }
+
+      /* Rainbow Main Base Layer */
+      .rainbow-main {
+        animation: animRainbowMain var(--dur) cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+      }
+
+      @keyframes animRainbowMain {
+        0%, 7.33% { opacity: 0.92; }
+        10.67%, 43.99% { opacity: 0; }
+        44.0% { opacity: 0.3; }
+        46.67%, 57.33% { opacity: 1.0; }
+        60.67%, 90.66% { opacity: 0; }
+        90.67% { opacity: 0.3; }
+        94.67%, 100% { opacity: 0.92; }
+      }
+
+      /* Rainbow Traveling Wave Pulses */
+      .rainbow-pulse-group {
+        animation: animRainbowPulseGroup var(--dur) ease-in-out infinite;
+      }
+
+      @keyframes animRainbowPulseGroup {
+        0%, 13.33% { opacity: 0; }
+        13.34%, 43.99% { opacity: 1; }
+        44.0%, 61.33% { opacity: 0; }
+        61.34%, 90.66% { opacity: 1; }
+        90.67%, 100% { opacity: 0; }
+      }
+
+      .pulse-wave-rect {
+        animation: animWaveMove var(--dur) linear infinite;
+      }
+
+      @keyframes animWaveMove {
+        /* Pulse 1: 2.7s - 3.4s (18.0% - 22.67%) */
+        0%, 17.99% { transform: translate(500px, 360px) rotate(9.95deg); opacity: 0; }
+        18.0% { transform: translate(550px, 370px) rotate(9.95deg); opacity: 1; }
+        22.67% { transform: translate(1100px, 470px) rotate(9.95deg); opacity: 0; }
+
+        /* Pulse 2: 3.8s - 4.5s (25.33% - 30.0%) */
+        22.68%, 25.32% { opacity: 0; }
+        25.33% { transform: translate(550px, 370px) rotate(9.95deg); opacity: 1; }
+        30.0%  { transform: translate(1100px, 470px) rotate(9.95deg); opacity: 0; }
+
+        /* Pulse 3: 4.9s - 5.6s (32.67% - 37.33%) */
+        30.01%, 32.66% { opacity: 0; }
+        32.67% { transform: translate(550px, 370px) rotate(9.95deg); opacity: 1; }
+        37.33% { transform: translate(1100px, 470px) rotate(9.95deg); opacity: 0; }
+
+        /* Pulse 4: 6.0s - 6.7s (40.0% - 44.67%) */
+        37.34%, 39.99% { opacity: 0; }
+        40.0%  { transform: translate(550px, 370px) rotate(9.95deg); opacity: 1; }
+        44.67% { transform: translate(1100px, 470px) rotate(9.95deg); opacity: 0; }
+
+        /* Pause for Climax */
+        44.68%, 66.66% { opacity: 0; }
+
+        /* Pulse 5: 10.0s - 10.7s (66.67% - 71.33%) */
+        66.67% { transform: translate(550px, 370px) rotate(9.95deg); opacity: 1; }
+        71.33% { transform: translate(1100px, 470px) rotate(9.95deg); opacity: 0; }
+
+        /* Pulse 6: 11.1s - 11.8s (74.0% - 78.67%) */
+        71.34%, 73.99% { opacity: 0; }
+        74.0%  { transform: translate(550px, 370px) rotate(9.95deg); opacity: 1; }
+        78.67% { transform: translate(1100px, 470px) rotate(9.95deg); opacity: 0; }
+
+        /* Pulse 7: 12.2s - 12.9s (81.33% - 86.0%) */
+        78.68%, 81.32% { opacity: 0; }
+        81.33% { transform: translate(550px, 370px) rotate(9.95deg); opacity: 1; }
+        86.0%  { transform: translate(1100px, 470px) rotate(9.95deg); opacity: 0; }
+
+        /* Pulse 8: 13.3s - 14.0s (88.67% - 93.33%) */
+        86.01%, 88.66% { opacity: 0; }
+        88.67% { transform: translate(550px, 370px) rotate(9.95deg); opacity: 1; }
+        93.33% { transform: translate(1100px, 470px) rotate(9.95deg); opacity: 0; }
+        93.34%, 100% { opacity: 0; }
+      }
+
+      /* Rainbow Climax Intense Glow Layer */
+      .rainbow-climax {
+        filter: url(#glow-intense);
+        animation: animRainbowClimax var(--dur) ease-in-out infinite;
+      }
+
+      @keyframes animRainbowClimax {
+        0%, 45.99% { opacity: 0; }
+        46.67% { opacity: 0.9; }
+        53.33% { opacity: 1.0; }
+        57.33% { opacity: 0.75; }
+        60.0%, 100% { opacity: 0; }
+      }
+
+      /* Sparkling Flares */
+      .flare {
+        animation: animFlare var(--dur) ease-in-out infinite;
+      }
+
+      @keyframes animFlare {
+        0%, 45.99% { opacity: 0; transform: scale(0.2); }
+        47.5% { opacity: 1.0; transform: scale(1.1); }
+        53.33% { opacity: 0.95; transform: scale(1.2); }
+        57.33% { opacity: 0.7; transform: scale(0.8); }
+        59.5%, 100% { opacity: 0; transform: scale(0.2); }
+      }
+    </style>
+
+    <!-- Visual Filters -->
+    <filter id="glow-intense" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="blur1" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-mid" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glow-soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="prismLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8dced" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#96b8d4" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#b0c8dc" stop-opacity="0.8" />
+    </linearGradient>
+
+    <radialGradient id="innerRefractionGrad" cx="0%" cy="50%" r="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="30%" stop-color="#f2f8ff" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#dbe8f8" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4" />
+    </radialGradient>
+
+    <radialGradient id="prismBloomGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="18%" stop-color="#e2f2ff" stop-opacity="0.75" />
+      <stop offset="45%" stop-color="#68a2ff" stop-opacity="0.35" />
+      <stop offset="75%" stop-color="#3050b0" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.0" />
+    </radialGradient>
+
+    <linearGradient id="wavePulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.0" />
+      <stop offset="20%" stop-color="#ffffff" stop-opacity="0.4" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="1.0" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0" />
+    </linearGradient>
+
+    <radialGradient id="flareGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1.0" />
+      <stop offset="35%" stop-color="#c8e8ff" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.0" />
+    </radialGradient>
+
+    <!-- Masks -->
+    <mask id="pulseTravelingMask">
+      <rect width="1080" height="1080" fill="#000000" />
+      <!-- Base shimmer -->
+      <rect width="1080" height="1080" fill="#1c1c1c" />
+      <!-- Moving pulse beam -->
+      <g class="pulse-wave-rect">
+        <rect x="-100" y="-60" width="260" height="180" fill="url(#wavePulseGrad)" />
+      </g>
+    </mask>
+
+    <!-- Clip path to keep rainbow neat -->
+    <clipPath id="rainbowClip">
+      <polygon points="604.1,380.0 1080.0,444.0 1080.0,546.0 644.0,449.0" />
+    </clipPath>
+  </defs>
+
+  <!-- Deep Black Space Background -->
+  <rect class="bg" width="1080" height="1080" />
+
+  <!-- Climax Ambient Radial Bloom Behind Prism -->
+  <ellipse class="prism-bloom" cx="540" cy="420" rx="280" ry="220" fill="url(#prismBloomGrad)" />
+
+  <!-- Prism Bottom Reflection -->
+  <line x1="430" y1="556" x2="650" y2="556" stroke="#a0cce8" stroke-width="4" stroke-linecap="round" stroke-opacity="0.2" filter="url(#glow-soft)" />
+
+  <!-- Rainbow Spectrum Climax Emission Glow -->
+  <g class="rainbow-climax" clip-path="url(#rainbowClip)">
+    <polygon points="604.1,380.0 1080.0,444.0 1080.0,460.0 610.7,391.5" fill="#ea212d" />
+    <polygon points="610.7,391.5 1080.0,460.0 1080.0,477.0 617.4,403.0" fill="#f37324" />
+    <polygon points="617.4,403.0 1080.0,477.0 1080.0,494.5 624.0,414.5" fill="#f8e71c" />
+    <polygon points="624.0,414.5 1080.0,494.5 1080.0,511.0 630.7,426.0" fill="#3cb54a" />
+    <polygon points="630.7,426.0 1080.0,511.0 1080.0,528.0 637.3,437.5" fill="#00a8e8" />
+    <polygon points="637.3,437.5 1080.0,528.0 1080.0,546.0 644.0,449.0" fill="#9152a5" />
+  </g>
+
+  <!-- Rainbow Spectrum Main Base Layer -->
+  <g class="rainbow-main" clip-path="url(#rainbowClip)">
+    <polygon points="604.1,380.0 1080.0,444.0 1080.0,460.0 610.7,391.5" fill="#ea212d" />
+    <polygon points="610.7,391.5 1080.0,460.0 1080.0,477.0 617.4,403.0" fill="#f37324" />
+    <polygon points="617.4,403.0 1080.0,477.0 1080.0,494.5 624.0,414.5" fill="#f8e71c" />
+    <polygon points="624.0,414.5 1080.0,494.5 1080.0,511.0 630.7,426.0" fill="#3cb54a" />
+    <polygon points="630.7,426.0 1080.0,511.0 1080.0,528.0 637.3,437.5" fill="#00a8e8" />
+    <polygon points="637.3,437.5 1080.0,528.0 1080.0,546.0 644.0,449.0" fill="#9152a5" />
+  </g>
+
+  <!-- Rainbow Spectrum Traveling Waves (Heartbeat Pulse Phase) -->
+  <g class="rainbow-pulse-group" mask="url(#pulseTravelingMask)" clip-path="url(#rainbowClip)">
+    <polygon points="604.1,380.0 1080.0,444.0 1080.0,460.0 610.7,391.5" fill="#ea212d" />
+    <polygon points="610.7,391.5 1080.0,460.0 1080.0,477.0 617.4,403.0" fill="#f37324" />
+    <polygon points="617.4,403.0 1080.0,477.0 1080.0,494.5 624.0,414.5" fill="#f8e71c" />
+    <polygon points="624.0,414.5 1080.0,494.5 1080.0,511.0 630.7,426.0" fill="#3cb54a" />
+    <polygon points="630.7,426.0 1080.0,511.0 1080.0,528.0 637.3,437.5" fill="#00a8e8" />
+    <polygon points="637.3,437.5 1080.0,528.0 1080.0,546.0 644.0,449.0" fill="#9152a5" />
+  </g>
+
+  <!-- Prism Inner Refraction Beam -->
+  <polygon class="prism-inner" points="464.5,400 604.1,380 644.0,449" />
+
+  <!-- White Beam Base & Glow -->
+  <line class="white-beam-glow" x1="0" y1="517" x2="464.5" y2="400" />
+  <line class="white-beam-main" x1="0" y1="517" x2="464.5" y2="400" />
+
+  <!-- White Beam Pulses (Traveling Packets) -->
+  <line class="white-pulse" x1="0" y1="517" x2="464.5" y2="400" />
+
+  <!-- Prism Triangle Outline -->
+  <polygon class="prism-line" points="540,269 371.5,561 708.5,561" />
+
+  <!-- Climax Flares & Sparkles -->
+  <g class="flare" style="transform-origin: 540px 269px;">
+    <circle cx="540" cy="269" r="18" fill="url(#flareGrad)" />
+    <path d="M 540 251 Q 540 269 522 269 Q 540 269 540 287 Q 540 269 558 269 Q 540 269 540 251 Z" fill="#ffffff" opacity="0.9" />
+  </g>
+  <g class="flare" style="transform-origin: 464.5px 400px;">
+    <circle cx="464.5" cy="400" r="16" fill="url(#flareGrad)" />
+    <path d="M 464.5 385 Q 464.5 400 449.5 400 Q 464.5 400 464.5 415 Q 464.5 400 479.5 400 Q 464.5 400 464.5 385 Z" fill="#ffffff" opacity="0.9" />
+  </g>
+  <g class="flare" style="transform-origin: 624px 415px;">
+    <circle cx="624" cy="415" r="24" fill="url(#flareGrad)" />
+    <path d="M 624 393 Q 624 415 602 415 Q 624 415 624 437 Q 624 415 646 415 Q 624 415 624 393 Z" fill="#ffffff" opacity="0.95" />
+  </g>
+</svg>

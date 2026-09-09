@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">The Dark Side of the Moon — prism of light</title>
+  <desc id="desc">A black square scene with a luminous cyan glass prism, a thin white beam entering from the left, and a fan of spectral rays leaving to the right.</desc>
+
+  <defs>
+    <filter id="blur-wide" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+    <filter id="blur-mid" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" />
+    </filter>
+    <filter id="blur-fine" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+
+    <linearGradient id="prism-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b8f7ff" />
+      <stop offset="0.42" stop-color="#dcfbff" />
+      <stop offset="0.72" stop-color="#72e6f4" />
+      <stop offset="1" stop-color="#bcefff" />
+    </linearGradient>
+    <linearGradient id="white-beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#dceeff" />
+      <stop offset="0.78" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#d8fbff" />
+    </linearGradient>
+
+    <linearGradient id="spectrum" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff1d32" />
+      <stop offset="0.16" stop-color="#ff7018" />
+      <stop offset="0.32" stop-color="#ffe500" />
+      <stop offset="0.48" stop-color="#53d45b" />
+      <stop offset="0.64" stop-color="#00c8ee" />
+      <stop offset="0.81" stop-color="#308cf6" />
+      <stop offset="1" stop-color="#9865e8" />
+    </linearGradient>
+
+    <polygon id="prism-shape" points="542,240 370,560 720,560" />
+
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000000" />
+
+  <!-- The still, cyan afterglow of the triangular prism. -->
+  <g aria-label="glowing prism" opacity="1">
+    <use xlink:href="#prism-shape" fill="none" stroke="#047e9f" stroke-width="40" stroke-linejoin="round" opacity=".22" filter="url(#blur-wide)" />
+    <use xlink:href="#prism-shape" fill="none" stroke="#20c2dc" stroke-width="18" stroke-linejoin="round" opacity=".48" filter="url(#blur-mid)" />
+    <use xlink:href="#prism-shape" fill="none" stroke="#64dceb" stroke-width="9" stroke-linejoin="round" opacity=".7" filter="url(#blur-fine)" />
+    <use xlink:href="#prism-shape" fill="none" stroke="url(#prism-edge)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity=".94" />
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      values=".86;.94;.8;.92;.88;.7;.64;.9;1;.92;.86;1;.92;.68;.56;.86"
+      keyTimes="0;.0667;.1333;.2;.2667;.3333;.4;.4667;.5333;.6;.6667;.7333;.8;.8667;.9333;1" />
+  </g>
+
+  <!-- Incoming white ray: the line is deliberately narrow, as in the source film. -->
+  <g id="incoming-beam" opacity="1" aria-label="white incoming beam">
+    <line x1="-24" y1="524" x2="464" y2="402" stroke="#bcefff" stroke-width="26" stroke-linecap="round" opacity=".16" filter="url(#blur-wide)" />
+    <line x1="-24" y1="518" x2="468" y2="399" stroke="#d9f8ff" stroke-width="13" stroke-linecap="round" opacity=".38" filter="url(#blur-mid)" />
+    <line x1="-24" y1="518" x2="468" y2="399" stroke="url(#white-beam)" stroke-width="4.8" stroke-linecap="round" />
+
+    <!-- Refraction inside the triangular glass. -->
+    <line x1="457" y1="405" x2="620" y2="375" stroke="#c9f7ff" stroke-width="18" stroke-linecap="round" opacity=".3" filter="url(#blur-mid)" />
+    <line x1="457" y1="405" x2="620" y2="375" stroke="#f3feff" stroke-width="4.2" stroke-linecap="round" opacity=".92" />
+    <circle cx="620" cy="375" r="18" fill="#8befff" opacity=".2" filter="url(#blur-mid)" />
+    <circle cx="620" cy="375" r="4" fill="#ffffff" opacity=".95" />
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      values="1;1;.42;0;.14;.36;0;.78;1;.2;.08;.3;.2;.02;1;1"
+      keyTimes="0;.0667;.1333;.2;.2667;.3333;.4;.4667;.5333;.6;.6667;.7333;.8;.8667;.9333;1" />
+  </g>
+
+  <!-- Dispersed rays leaving the right face. -->
+  <g id="spectrum-beam" opacity="1" aria-label="rainbow spectrum">
+    <g fill="none" stroke-linecap="round" opacity=".44" filter="url(#blur-mid)">
+      <line x1="620" y1="375" x2="1120" y2="452" stroke="#ff1d32" stroke-width="25" />
+      <line x1="620" y1="375" x2="1120" y2="468" stroke="#ff7419" stroke-width="24" />
+      <line x1="620" y1="375" x2="1120" y2="484" stroke="#ffe500" stroke-width="23" />
+      <line x1="620" y1="375" x2="1120" y2="500" stroke="#55d75a" stroke-width="22" />
+      <line x1="620" y1="375" x2="1120" y2="516" stroke="#00cbed" stroke-width="22" />
+      <line x1="620" y1="375" x2="1120" y2="532" stroke="#308cf6" stroke-width="21" />
+      <line x1="620" y1="375" x2="1120" y2="548" stroke="#9865e8" stroke-width="20" />
+    </g>
+    <g fill="none" stroke-linecap="round" stroke-width="5.5">
+      <line x1="620" y1="375" x2="1120" y2="452" stroke="#ff2035" />
+      <line x1="620" y1="375" x2="1120" y2="468" stroke="#ff7418" />
+      <line x1="620" y1="375" x2="1120" y2="484" stroke="#ffe500" />
+      <line x1="620" y1="375" x2="1120" y2="500" stroke="#52d65a" />
+      <line x1="620" y1="375" x2="1120" y2="516" stroke="#00c9ed" />
+      <line x1="620" y1="375" x2="1120" y2="532" stroke="#318df6" />
+      <line x1="620" y1="375" x2="1120" y2="548" stroke="#9865e8" />
+    </g>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      values="1;1;.64;0;0;0;.02;.62;1;1;0;0;0;.02;0;1"
+      keyTimes="0;.0667;.1333;.2;.2667;.3333;.4;.4667;.5333;.6;.6667;.7333;.8;.8667;.9333;1" />
+  </g>
+</svg>

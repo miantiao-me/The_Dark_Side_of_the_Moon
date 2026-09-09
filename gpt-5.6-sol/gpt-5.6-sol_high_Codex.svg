@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title description">
+  <title id="title">The Dark Side of the Moon — 光的循环</title>
+  <desc id="description">黑色空间中，一束白光穿过发光的三棱镜并分解为彩虹光谱。画面以十五秒为周期循环。</desc>
+
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="0.72" y2="1">
+      <stop offset="0" stop-color="#dfffff" stop-opacity="0.16"/>
+      <stop offset="0.48" stop-color="#13333b" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#071114" stop-opacity="0.46"/>
+    </linearGradient>
+    <linearGradient id="leftEdge" x1="405" y1="625" x2="540" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#84e8ff" stop-opacity="0.8"/>
+      <stop offset="0.5" stop-color="#d8fbff"/>
+      <stop offset="1" stop-color="#eaffff" stop-opacity="0.82"/>
+    </linearGradient>
+    <linearGradient id="rightEdge" x1="540" y1="260" x2="705" y2="625" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#efffff" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#8deaff" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#eaffff"/>
+    </linearGradient>
+    <linearGradient id="baseEdge" x1="375" y1="625" x2="705" y2="625" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#89ecff" stop-opacity="0.72"/>
+      <stop offset="0.52" stop-color="#d9ffff" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#eaffff" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="520" x2="595" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d9d9d9" stop-opacity="0.78"/>
+      <stop offset="0.45" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f6ffff"/>
+    </linearGradient>
+    <linearGradient id="beamCore" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.18" stop-color="#fff" stop-opacity="0.82"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <radialGradient id="apexGlow">
+      <stop stop-color="#eaffff" stop-opacity="0.85"/>
+      <stop offset="0.16" stop-color="#b9f6ff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#7de8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="heartGlow">
+      <stop stop-color="#fff" stop-opacity="0.72"/>
+      <stop offset="0.18" stop-color="#aef3ff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#64ddff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="13" result="blur"/>
+      <feColorMatrix in="blur" values="0.25 0 0 0 0.26  0 0.92 0 0 0.94  0 0 1 0 1  0 0 0 0.9 0" result="cyanBlur"/>
+      <feMerge>
+        <feMergeNode in="cyanBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="wideGlow" x="-60%" y="-100%" width="220%" height="300%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="beamGlow" x="-10%" y="-500%" width="120%" height="1100%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="rainbowGlow" x="-12%" y="-100%" width="125%" height="300%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" seed="9"/>
+      <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.07 0"/>
+    </filter>
+
+    <clipPath id="prismClip">
+      <path d="M540 259 L366 625 L714 625 Z"/>
+    </clipPath>
+    <clipPath id="incomingReveal">
+      <rect x="-40" y="400" width="650" height="220">
+        <animate attributeName="width" dur="15s" repeatCount="indefinite"
+          values="650;650;0;0;650;650;650;0;0;650"
+          keyTimes="0;.12;.22;.34;.43;.63;.72;.82;.9;1"/>
+      </rect>
+    </clipPath>
+    <clipPath id="spectrumReveal">
+      <rect x="570" y="400" width="550" height="250">
+        <animate attributeName="width" dur="15s" repeatCount="indefinite"
+          values="550;550;0;0;0;550;550;0;0;550"
+          keyTimes="0;.12;.2;.38;.45;.54;.68;.76;.9;1"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000"/>
+
+  <!-- The faint reflected light anchors the prism without introducing a visible floor. -->
+  <g opacity="0.36">
+    <path d="M387 620 L166 817 L517 646 Z" fill="#78dfff" opacity="0.04" filter="url(#wideGlow)"/>
+    <path d="M690 620 L914 820 L562 646 Z" fill="#99eeff" opacity="0.035" filter="url(#wideGlow)"/>
+  </g>
+
+  <g id="prism">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      values="1;.78;.9;.55;.86;1;.88;.62;.95;1"
+      keyTimes="0;.12;.24;.34;.45;.56;.68;.78;.9;1"/>
+
+    <ellipse cx="540" cy="615" rx="230" ry="35" fill="url(#heartGlow)" opacity="0.17" filter="url(#wideGlow)"/>
+    <circle cx="540" cy="269" r="106" fill="url(#apexGlow)" opacity="0.27">
+      <animate attributeName="opacity" dur="3.75s" repeatCount="indefinite" values=".18;.36;.18"/>
+    </circle>
+
+    <path d="M540 259 L366 625 L714 625 Z" fill="url(#glass)"/>
+    <path d="M540 259 L366 625" fill="none" stroke="url(#leftEdge)" stroke-width="22" opacity="0.2" filter="url(#wideGlow)"/>
+    <path d="M540 259 L714 625" fill="none" stroke="url(#rightEdge)" stroke-width="20" opacity="0.2" filter="url(#wideGlow)"/>
+    <path d="M366 625 L714 625" fill="none" stroke="#a9f2ff" stroke-width="17" opacity="0.14" filter="url(#wideGlow)"/>
+
+    <path d="M540 259 L366 625" fill="none" stroke="url(#leftEdge)" stroke-width="3.2" filter="url(#softGlow)"/>
+    <path d="M540 259 L714 625" fill="none" stroke="url(#rightEdge)" stroke-width="3.2" filter="url(#softGlow)"/>
+    <path d="M366 625 L714 625" fill="none" stroke="url(#baseEdge)" stroke-width="3.2" filter="url(#softGlow)"/>
+
+    <g clip-path="url(#prismClip)" opacity="0.72">
+      <path d="M540 279 L496 592 L540 610 L584 592 Z" fill="#8ceaff" opacity="0.055"/>
+      <path d="M540 275 L540 608" stroke="#bdf7ff" stroke-width="2" opacity="0.26" filter="url(#softGlow)"/>
+      <path d="M540 608 L401 623" stroke="#a4efff" stroke-width="2" opacity="0.18" filter="url(#softGlow)"/>
+      <path d="M540 608 L681 623" stroke="#d1fbff" stroke-width="2" opacity="0.24" filter="url(#softGlow)"/>
+      <path d="M407 590 Q540 643 676 590" fill="none" stroke="#70dcf4" stroke-width="2" opacity="0.12"/>
+    </g>
+  </g>
+
+  <g id="incoming-light" clip-path="url(#incomingReveal)">
+    <path d="M-30 568 L456 455 L594 450 L472 481 Z" fill="url(#beam)" opacity="0.12" filter="url(#beamGlow)"/>
+    <path d="M-30 566 L456 456 L594 451 L471 476 Z" fill="url(#beam)" opacity="0.86"/>
+    <path d="M-30 566.5 L594 452.5" fill="none" stroke="url(#beamCore)" stroke-width="2.6" filter="url(#beamGlow)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      values="1;1;0;0;.3;1;1;0;0;1"
+      keyTimes="0;.12;.2;.36;.43;.5;.68;.77;.9;1"/>
+  </g>
+
+  <!-- Refraction stays clipped to the glass, so the beam reads as passing through it. -->
+  <g clip-path="url(#prismClip)">
+    <path d="M447 455 L594 449 L609 470 L471 479 Z" fill="#ecffff" opacity="0.6" filter="url(#beamGlow)"/>
+    <path d="M447 456 L594 451 L606 465 L471 475 Z" fill="#fff" opacity="0.66"/>
+    <path d="M469 474 L540 604 L540 622" fill="none" stroke="#92e7f7" stroke-width="3" opacity="0.24" filter="url(#softGlow)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      values="1;.9;.15;0;.35;1;1;.15;0;1"
+      keyTimes="0;.12;.22;.34;.44;.53;.68;.78;.9;1"/>
+  </g>
+
+  <g id="spectrum" clip-path="url(#spectrumReveal)">
+    <g opacity="0.56" filter="url(#rainbowGlow)">
+      <path d="M589 450 L1085 515 L1085 532 L593 459 Z" fill="#ff1828"/>
+      <path d="M593 459 L1085 532 L1085 548 L596 467 Z" fill="#ff8a19"/>
+      <path d="M596 467 L1085 548 L1085 564 L600 475 Z" fill="#fff12f"/>
+      <path d="M600 475 L1085 564 L1085 580 L604 483 Z" fill="#41e85d"/>
+      <path d="M604 483 L1085 580 L1085 596 L608 491 Z" fill="#31ccff"/>
+      <path d="M608 491 L1085 596 L1085 613 L612 499 Z" fill="#8f76df"/>
+    </g>
+    <g>
+      <path d="M589 450 L1085 515 L1085 532 L593 459 Z" fill="#fa1727"/>
+      <path d="M593 459 L1085 532 L1085 548 L596 467 Z" fill="#ff8219"/>
+      <path d="M596 467 L1085 548 L1085 564 L600 475 Z" fill="#ffe92e"/>
+      <path d="M600 475 L1085 564 L1085 580 L604 483 Z" fill="#35d962"/>
+      <path d="M604 483 L1085 580 L1085 596 L608 491 Z" fill="#2bbcf4"/>
+      <path d="M608 491 L1085 596 L1085 613 L612 499 Z" fill="#8170c7"/>
+    </g>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      values="1;1;0;0;0;1;1;0;0;1"
+      keyTimes="0;.12;.2;.38;.45;.54;.68;.76;.9;1"/>
+  </g>
+
+  <circle cx="595" cy="458" r="62" fill="url(#heartGlow)" opacity="0.38" filter="url(#wideGlow)">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite"
+      values=".42;.3;0;0;.12;.5;.36;0;0;.42"
+      keyTimes="0;.12;.2;.38;.45;.54;.68;.76;.9;1"/>
+  </circle>
+
+  <rect width="1080" height="1080" filter="url(#grain)" opacity="0.1" pointer-events="none"/>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">The Dark Side of the Moon — 棱镜与光谱</title>
+  <desc id="desc">根据本地视频绘制的十五秒循环矢量动画：黑色背景中，青白色玻璃棱镜旋转，白色光束从左侧射入，右侧展开六色光谱。</desc>
+  <defs>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="glassBlur" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="halo" x="-80%" y="-80%" width="260%" height="260%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="17"/></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".78" numOctaves="3" seed="8"/><feColorMatrix type="saturate" values="0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#183640" stop-opacity=".18"/><stop offset=".5" stop-color="#000" stop-opacity=".02"/><stop offset="1" stop-color="#27434a" stop-opacity=".13"/></linearGradient>
+    <linearGradient id="refraction" gradientUnits="userSpaceOnUse" x1="465" y1="400" x2="635" y2="408"><stop stop-color="#fff"/><stop offset=".17" stop-color="#effdff" stop-opacity=".97"/><stop offset=".57" stop-color="#b7e1ec" stop-opacity=".56"/><stop offset="1" stop-color="#8cbfcf" stop-opacity=".45"/></linearGradient>
+    <radialGradient id="flare"><stop stop-color="#efffff" stop-opacity=".9"/><stop offset=".18" stop-color="#c7f5ff" stop-opacity=".55"/><stop offset="1" stop-color="#72d9f1" stop-opacity="0"/></radialGradient>
+<path id="outline" d="M 542 270 L 710 563 L 374 563 Z"><animate attributeName="d" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.120000;0.140000;0.173333;0.206667;0.240000;0.273333;0.306667;0.340000;0.373333;0.406667;0.433333;0.593333;0.620000;0.653333;0.686667;0.720000;0.753333;0.786667;0.820000;0.853333;0.886667;0.913333;1.000000" values="M 542 270 L 710 563 L 374 563 Z;M 542 270 L 710 563 L 374 563 Z;M 540 271 L 704 565 L 370 554 Z;M 546 270 L 676 571 L 370 556 Z;M 537 269 L 706 555 L 414 573 Z;M 536 270 L 708 562 L 370 564 Z;M 541 270 L 708 560 L 413 557 Z;M 541 270 L 709 562 L 375 562 Z;M 542 270 L 674 557 L 374 559 Z;M 546 270 L 710 558 L 448 570 Z;M 540 270 L 710 562 L 391 562 Z;M 542 270 L 710 563 L 374 563 Z;M 542 270 L 710 563 L 374 563 Z;M 539 269 L 710 562 L 371 561 Z;M 541 270 L 667 575 L 373 558 Z;M 538 270 L 709 556 L 397 559 Z;M 541 269 L 708 563 L 400 563 Z;M 541 270 L 681 558 L 373 561 Z;M 546 270 L 710 559 L 444 571 Z;M 538 270 L 686 570 L 373 559 Z;M 541 270 L 709 558 L 411 560 Z;M 540 270 L 710 561 L 387 562 Z;M 542 270 L 710 563 L 374 563 Z;M 542 270 L 710 563 L 374 563 Z" /></path>
+<path id="ridge" d="M 542 270 L 542 552 M 374 563 L 542 552 L 710 563"><animate attributeName="d" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.120000;0.140000;0.173333;0.206667;0.240000;0.273333;0.306667;0.340000;0.373333;0.406667;0.433333;0.593333;0.620000;0.653333;0.686667;0.720000;0.753333;0.786667;0.820000;0.853333;0.886667;0.913333;1.000000" values="M 542 270 L 542 552 M 374 563 L 542 552 L 710 563;M 542 270 L 542 552 M 374 563 L 542 552 L 710 563;M 540 271 L 620 553 M 370 554 L 620 553 L 704 565;M 546 270 L 650 552 M 370 556 L 650 552 L 676 571;M 537 269 L 432 550 M 414 573 L 432 550 L 706 555;M 536 270 L 572 549 M 370 564 L 572 549 L 708 562;M 541 270 L 517 581 M 413 557 L 517 581 L 708 560;M 541 270 L 529 555 M 375 562 L 529 555 L 709 562;M 542 270 L 585 582 M 374 559 L 585 582 L 674 557;M 546 270 L 456 550 M 448 570 L 456 550 L 710 558;M 540 270 L 514 553 M 391 562 L 514 553 L 710 562;M 542 270 L 542 552 M 374 563 L 542 552 L 710 563;M 542 270 L 542 552 M 374 563 L 542 552 L 710 563;M 539 269 L 558 553 M 371 561 L 558 553 L 710 562;M 541 270 L 638 550 M 373 558 L 638 550 L 667 575;M 538 270 L 537 580 M 397 559 L 537 580 L 709 556;M 541 269 L 474 546 M 400 563 L 474 546 L 708 563;M 541 270 L 610 580 M 373 561 L 610 580 L 681 558;M 546 270 L 452 550 M 444 571 L 452 550 L 710 559;M 538 270 L 659 552 M 373 559 L 659 552 L 686 570;M 541 270 L 515 580 M 411 560 L 515 580 L 709 558;M 540 270 L 485 551 M 387 562 L 485 551 L 710 561;M 542 270 L 542 552 M 374 563 L 542 552 L 710 563;M 542 270 L 542 552 M 374 563 L 542 552 L 710 563" /></path>
+<clipPath id="prismClip"><use xlink:href="#outline"/></clipPath>
+<g id="spectrum">
+<path d="M 600.00 370.00 L 1080 443.00 V 460.33 L 605.83 380.50 Z" fill="#ff0925"/>
+<path d="M 605.83 380.50 L 1080 460.33 V 477.67 L 611.67 391.00 Z" fill="#ff8b00"/>
+<path d="M 611.67 391.00 L 1080 477.67 V 495.00 L 617.50 401.50 Z" fill="#fff21a"/>
+<path d="M 617.50 401.50 L 1080 495.00 V 512.33 L 623.33 412.00 Z" fill="#72d53e"/>
+<path d="M 623.33 412.00 L 1080 512.33 V 529.67 L 629.17 422.50 Z" fill="#04bfdc"/>
+<path d="M 629.17 422.50 L 1080 529.67 V 547.00 L 635.00 433.00 Z" fill="#8173ba"/>
+</g>
+<clipPath id="lightTravel"><rect x="0" y="200" width="1080" height="500">
+<animate attributeName="x" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.100000;0.140000;0.413333;0.414000;0.580000;0.593333;0.633333;0.886667;0.887333;1.000000" values="0;0;1080;1080;0;0;0;1080;1080;0;0" />
+<animate attributeName="width" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.100000;0.140000;0.413333;0.414000;0.470000;0.593333;0.633333;0.886667;0.887333;0.943333;1.000000" values="1080;1080;1080;0;0;1080;1080;1080;0;0;1080;1080" />
+</rect></clipPath></defs><rect width="1080" height="1080" fill="#000"/>
+<g opacity="0"><animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.113333;0.153333;0.233333;0.366667;0.420000;0.466667;0.586667;0.640000;0.786667;0.893333;0.933333;1.000000" values="0;0;0.5;0.85;0.7;0.08;0.8;0.75;1;0.8;0;0;0" />
+<use xlink:href="#outline" fill="none" stroke="#79d0e5" stroke-width="19" filter="url(#halo)"/>
+</g>
+<g clip-path="url(#lightTravel)"><use xlink:href="#spectrum"/>
+<g opacity="0"><animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.113333;0.153333;0.233333;0.366667;0.420000;0.466667;0.586667;0.640000;0.786667;0.893333;0.933333;1.000000" values="0;0;0.5;0.85;0.7;0.08;0.8;0.75;1;0.8;0;0;0" /><use xlink:href="#spectrum" filter="url(#glassBlur)"/><use xlink:href="#spectrum" filter="url(#soft)" opacity=".7"/></g></g>
+<use xlink:href="#outline" fill="url(#glass)"/>
+<g clip-path="url(#prismClip)">
+  <use xlink:href="#outline" fill="none" stroke="#65bace" stroke-width="43" opacity=".59" filter="url(#glassBlur)"/>
+  <use xlink:href="#outline" fill="none" stroke="#c0e3ed" stroke-width="15" opacity=".72" filter="url(#soft)"/>
+  <use xlink:href="#outline" fill="none" stroke="#e5eff3" stroke-width="3" opacity=".58"/>
+  <use xlink:href="#outline" fill="none" stroke="#fff" stroke-width="54" filter="url(#grain)" opacity=".15"/>
+</g>
+<g opacity="0"><animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.120000;0.146667;0.233333;0.366667;0.410000;0.433333;0.593333;0.633333;0.846667;0.886667;0.913333;1.000000" values="0;0;0.45;0.74;0.8;0.14;0;0;0.8;0.65;0.1;0;0" />
+<use xlink:href="#ridge" fill="none" stroke="#89edff" stroke-width="10" filter="url(#glassBlur)"/><use xlink:href="#ridge" fill="none" stroke="#9eddde" stroke-width="8" filter="url(#soft)"/><use xlink:href="#ridge" fill="none" stroke="#d4ffff" stroke-width="1.6" opacity=".8"/></g>
+<g opacity="0"><animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.113333;0.153333;0.233333;0.366667;0.420000;0.466667;0.586667;0.640000;0.786667;0.893333;0.933333;1.000000" values="0;0;0.5;0.85;0.7;0.08;0.8;0.75;1;0.8;0;0;0" />
+<use xlink:href="#outline" fill="none" stroke="#d4faff" stroke-width="5" filter="url(#soft)"/>
+<use xlink:href="#outline" fill="none" stroke="#edffff" stroke-width="1.2" opacity=".75"/>
+<ellipse cx="542" cy="270" rx="9" ry="72" fill="url(#flare)" opacity=".55"/>
+<ellipse cx="391" cy="561" rx="64" ry="11" transform="rotate(-48 391 561)" fill="url(#flare)" opacity=".35"/>
+<ellipse cx="704" cy="561" rx="55" ry="10" transform="rotate(47 704 561)" fill="url(#flare)" opacity=".3"/>
+</g>
+<g clip-path="url(#lightTravel)">
+<path d="M -8 520 L 466 400 L 600 370 L 635 433 L 466 403 Z" fill="url(#refraction)"/>
+<path d="M -8 520 L 467 400" fill="none" stroke="#fff" stroke-width="4.3"/>
+<path d="M 466 400 L 600 370 L 635 433 Z" fill="#fff" filter="url(#grain)" opacity=".15"/>
+<g opacity="0"><animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0.000000;0.113333;0.153333;0.233333;0.366667;0.420000;0.466667;0.586667;0.640000;0.786667;0.893333;0.933333;1.000000" values="0;0;0.5;0.85;0.7;0.08;0.8;0.75;1;0.8;0;0;0" />
+<ellipse cx="466" cy="400" rx="38" ry="24" fill="url(#flare)" filter="url(#soft)"/>
+<path d="M 334 434 L 466 400 L 514 409" fill="none" stroke="#dcfaff" stroke-width="6" filter="url(#soft)" opacity=".6"/>
+</g></g></svg>
