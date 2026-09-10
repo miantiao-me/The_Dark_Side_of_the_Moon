@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <title>The Dark Side of the Moon — prism, white beam and spectrum fan</title>
+  <desc>A white light ray enters the left face of a glass prism and leaves the right face as a fanned-out rainbow on black. The beam breathes gently, as in the reference video.</desc>
+
+  <defs>
+    <!-- glass body: bright near the apex, almost black in the middle, lit again at the base -->
+    <linearGradient id="glass" x1="0" y1="160" x2="0" y2="332" gradientUnits="userSpaceOnUse">
+      <stop offset="0"    stop-color="#d3e9ef"/>
+      <stop offset="0.10" stop-color="#8fb8c2"/>
+      <stop offset="0.20" stop-color="#2f6b76"/>
+      <stop offset="0.30" stop-color="#16333a"/>
+      <stop offset="0.42" stop-color="#0a1214"/>
+      <stop offset="0.56" stop-color="#16292d"/>
+      <stop offset="0.72" stop-color="#0a1416"/>
+      <stop offset="0.86" stop-color="#07100f"/>
+      <stop offset="0.95" stop-color="#153339"/>
+      <stop offset="1"    stop-color="#4c828c"/>
+    </linearGradient>
+
+    <!-- the two violet-leaning bands only reach their pale colour far from the glass -->
+    <linearGradient id="blueBand" x1="372" y1="0" x2="640" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#333a63"/>
+      <stop offset="1" stop-color="#a7b2ea"/>
+    </linearGradient>
+    <linearGradient id="violetBand" x1="376" y1="0" x2="640" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0"    stop-color="#4a4183"/>
+      <stop offset="0.45" stop-color="#9c94d8"/>
+      <stop offset="1"    stop-color="#c0abe9"/>
+    </linearGradient>
+
+    <!-- kills the prism halo under the base, where the reference is dark -->
+    <linearGradient id="fadeout" x1="0" y1="330" x2="0" y2="362" gradientUnits="userSpaceOnUse">
+      <stop offset="0"    stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#000000" stop-opacity="0.42"/>
+      <stop offset="0.5"  stop-color="#000000" stop-opacity="0.66"/>
+      <stop offset="0.78" stop-color="#000000" stop-opacity="0.82"/>
+      <stop offset="1"    stop-color="#000000" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="soft"    x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.4"/></filter>
+    <filter id="soft2"   x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <filter id="soft3"   x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="soft4"   x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="glow6"   x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="glow8"   x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="bigglow" x="-140%" y="-140%" width="380%" height="380%"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="fanGlow" x="-40%" y="-60%" width="180%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="edgesoft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="0.9"/></filter>
+
+    <clipPath id="prismClip"><polygon points="320.8,160.4 221.8,332 419.4,332"/></clipPath>
+
+    <style>
+      /* the light source in the video pulses; keep the swing small so any frame reads correctly */
+      @keyframes breathe { 0%,100% { opacity:1 } 45% { opacity:.93 } 70% { opacity:.97 } }
+      .light { animation: breathe 7.5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000000"/>
+
+  <!-- artwork is authored on a 640 grid and scaled up to 1080 -->
+  <g transform="scale(1.6875)">
+
+    <!-- ================= prism ================= -->
+    <!-- halo, drawn behind the glass so only its outer half survives -->
+    <polygon points="320.8,160.4 221.8,332 419.4,332" fill="none"
+             stroke="#2f6b78" stroke-width="26" filter="url(#bigglow)"/>
+    <polygon points="320.8,160.4 221.8,332 419.4,332" fill="none"
+             stroke="#7fc0cd" stroke-width="7" filter="url(#glow8)" opacity="0.95"/>
+
+    <rect x="-20" y="330" width="680" height="34" fill="url(#fadeout)"/>
+
+    <polygon points="320.8,160.4 221.8,332 419.4,332" fill="url(#glass)"/>
+
+    <g clip-path="url(#prismClip)">
+      <!-- light trapped along the three faces -->
+      <polygon points="320.8,160.4 221.8,332 419.4,332" fill="none"
+               stroke="#63b0be" stroke-width="11" filter="url(#glow6)"/>
+      <polygon points="320.8,160.4 221.8,332 419.4,332" fill="none"
+               stroke="#a6dbe4" stroke-width="4" filter="url(#soft3)" opacity="0.85"/>
+      <rect x="206" y="316" width="226" height="18" fill="#4f8f9a" opacity="0.85" filter="url(#glow8)"/>
+      <!-- refracted ray inside the glass -->
+      <ellipse cx="318" cy="238" rx="44" ry="16" fill="#cdeef6" opacity="0.55" filter="url(#soft4)"/>
+      <ellipse cx="280" cy="236" rx="38" ry="13" fill="#ffffff" opacity="0.9"  filter="url(#soft4)"/>
+      <ellipse cx="272" cy="237" rx="22" ry="6"  fill="#ffffff" opacity="0.9"  filter="url(#soft2)"/>
+    </g>
+
+    <!-- crisp faces -->
+    <g fill="none" stroke-linejoin="round">
+      <polygon points="320.8,160.4 221.8,332 419.4,332" stroke="#b3dbe3" stroke-width="2" filter="url(#edgesoft)"/>
+      <polygon points="320.8,160.4 221.8,332 419.4,332" stroke="#f2fbfd" stroke-width="1"/>
+    </g>
+
+    <!-- base line, its glow and the two lit bottom corners -->
+    <line x1="212" y1="331" x2="430" y2="331" stroke="#63a9b5" stroke-width="3" filter="url(#soft2)"/>
+    <rect x="209" y="332" width="222" height="5" fill="#478791" opacity="0.8" filter="url(#soft2)"/>
+    <line x1="236" y1="340" x2="404" y2="340" stroke="#2f6b78" stroke-width="9" filter="url(#glow8)" opacity="0.5"/>
+    <g fill="#cfeaf0" filter="url(#soft2)">
+      <ellipse cx="227" cy="330" rx="11" ry="5"/>
+      <ellipse cx="417" cy="330" rx="11" ry="5"/>
+    </g>
+    <g fill="#2f6b78" filter="url(#soft3)" opacity="0.6">
+      <ellipse cx="214" cy="342" rx="10" ry="6"/>
+      <ellipse cx="424" cy="342" rx="10" ry="6"/>
+    </g>
+    <g fill="#5f9fae" filter="url(#soft3)" opacity="0.7">
+      <circle cx="205" cy="349" r="3.5"/>
+      <circle cx="440" cy="350" r="3.5"/>
+    </g>
+
+    <!-- apex flash -->
+    <line x1="321.5" y1="144" x2="321.5" y2="158" stroke="#9dd4df" stroke-width="3" filter="url(#soft2)" opacity="0.85"/>
+    <ellipse cx="321" cy="166" rx="7" ry="7" fill="#d8f0f5" opacity="0.8" filter="url(#soft2)"/>
+
+    <!-- ================= light ================= -->
+    <g class="light">
+      <!-- incoming white ray: 14.2 deg above the horizontal, thin and hard -->
+      <line x1="-10" y1="308.7" x2="279" y2="235.4" stroke="#ffffff" stroke-width="3.1" filter="url(#edgesoft)"/>
+      <line x1="-10" y1="308.7" x2="279" y2="235.4" stroke="#ffffff" stroke-width="2.3"/>
+
+      <!-- spectrum fan: red on top, violet at the bottom -->
+      <g filter="url(#fanGlow)" opacity="0.45">
+        <polygon points="346.1,204.5 355.0,220.1 640,270.4 640,256.4" fill="#dc0e33"/>
+        <polygon points="375.5,256.0 379.5,262.5 640,323.5 640,316.4" fill="url(#violetBand)"/>
+        <polygon points="379.5,262.5 382.5,269.0 640,330.0 640,323.5" fill="#3f4576"/>
+      </g>
+      <g>
+        <polygon points="346.1,204.5 355.0,220.1 640,270.4 640,256.4" fill="#dc0e33"/>
+        <polygon points="355.0,220.1 357.7,224.7 640,273.0 640,270.4" fill="#f0982a"/>
+        <polygon points="357.7,224.7 364.0,235.6 640,292.4 640,273.0" fill="#fbf71e"/>
+        <polygon points="364.0,235.6 367.5,241.8 640,302.4 640,292.4" fill="#bdff92"/>
+        <polygon points="367.5,241.8 371.9,249.4 640,312.4 640,302.4" fill="#4afffc"/>
+        <polygon points="371.9,249.4 375.5,256.0 640,316.4 640,312.4" fill="url(#blueBand)"/>
+        <polygon points="375.5,256.0 379.5,262.5 640,323.5 640,316.4" fill="url(#violetBand)"/>
+        <polygon points="379.5,262.5 382.5,269.0 640,330.0 640,323.5" fill="#3f4576"/>
+        <!-- pale indigo core running through the cool end of the fan -->
+        <line x1="374" y1="253.4" x2="640" y2="314.8" stroke="#d2cef4" stroke-width="2.2" opacity="0.9"/>
+      </g>
+      <!-- teal bloom hugging the exit face -->
+      <g stroke-linecap="round" filter="url(#soft4)">
+        <line x1="348" y1="203" x2="362" y2="226" stroke="#bfeef4" stroke-width="14" opacity="0.9"/>
+        <line x1="360" y1="224" x2="370" y2="243" stroke="#9fe4ee" stroke-width="12" opacity="0.65"/>
+      </g>
+    </g>
+  </g>
+</svg>

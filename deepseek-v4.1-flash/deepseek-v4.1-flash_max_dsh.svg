@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">The Dark Side of the Moon — prism refracting white light into a spectrum</title>
+  <desc id="dsc">A narrow white beam of light crosses from the lower left, strikes the left face of an outlined glass prism, and leaves the right face as a fan of rainbow bands widening toward the right edge of the frame on a black background.</desc>
+  <defs>
+    <linearGradient id="gTail" gradientUnits="userSpaceOnUse" x1="610" y1="430" x2="900" y2="575">
+      <stop offset="0" stop-color="#0B6EFF" stop-opacity="0.45"/>
+      <stop offset="0.5" stop-color="#0A4BB4" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#5A0FA0" stop-opacity="0.10"/>
+    </linearGradient>
+    <linearGradient id="gSpec" gradientUnits="userSpaceOnUse" x1="569.8" y1="354.3" x2="637.7" y2="618.7">
+      <stop offset="0.0000" stop-color="#FF0000"/><stop offset="0.1000" stop-color="#FF0000"/>
+      <stop offset="0.1500" stop-color="#FF8000"/><stop offset="0.2500" stop-color="#FF8000"/>
+      <stop offset="0.3000" stop-color="#FFE800"/><stop offset="0.4000" stop-color="#FFE800"/>
+      <stop offset="0.4500" stop-color="#4DEE00"/><stop offset="0.5500" stop-color="#4DEE00"/>
+      <stop offset="0.6000" stop-color="#00A629"/><stop offset="0.7000" stop-color="#00A629"/>
+      <stop offset="0.7500" stop-color="#00A8E0"/><stop offset="0.8500" stop-color="#00A8E0"/>
+      <stop offset="0.9000" stop-color="#6E60A4"/><stop offset="1.0000" stop-color="#6E60A4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000000"/>
+
+  <!-- refracted spectrum: seven bands running from the prism face to the right edge -->
+  <g id="spectrum">
+    <animateTransform attributeName="transform" type="rotate" values="0;0.55;0;-0.55;0" keyTimes="0;0.25;0.5;0.75;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1;1.045;1.015;1;1" keyTimes="0;0.25;0.5;0.75;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    <animate attributeName="opacity" values="1;1;0.42;0.03;0;0;0;0;0.04;0.13;0.63;1;1;0.11;0.05;0;0.03;0.11;1" keyTimes="0;0.093;0.127;0.167;0.233;0.333;0.400;0.433;0.467;0.487;0.500;0.520;0.567;0.600;0.633;0.667;0.700;0.800;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <polygon points="600,414 1010,525 1010,568 600,457" fill="url(#gTail)"/>
+    <polygon points="590,370.0 1080,449.5 1080,462.0 590,382.5" fill="#FF0000" opacity="1"/>
+    <polygon points="590,382.5 1080,462.0 1080,474.5 590,395.0" fill="#FF8000" opacity="1"/>
+    <polygon points="590,395.0 1080,474.5 1080,487.5 590,408.0" fill="#FFE000" opacity="1"/>
+    <polygon points="590,408.0 1080,487.5 1080,500.5 590,421.0" fill="#4DEE00" opacity="1"/>
+    <polygon points="590,421.0 1080,500.5 1080,513.5 590,434.0" fill="#00A629" opacity="1"/>
+    <polygon points="590,434.0 1080,513.5 1080,527.0 590,447.5" fill="#00A8E0" opacity="1"/>
+    <polygon points="590,447.5 1080,527.0 1080,545.0 590,465.5" fill="#6E60A4" opacity="1"/>
+  </g>
+
+  <!-- glass prism: layered strokes give a crisp outer edge and an inward fade -->
+  <g id="prism">
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 7;0 2;0 0;0 0" keyTimes="0;0.25;0.5;0.75;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <animateTransform attributeName="transform" type="scale" values="1.00;1.27;1.16;1.00;1.00" keyTimes="0;0.25;0.5;0.75;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" additive="sum"/>
+    <animateTransform attributeName="transform" type="rotate" values="0.9;-2.2;-4.4;-5.1;-4.4;-2.2;0.9" keyTimes="0;0.125;0.25;0.375;0.5;0.625;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1" additive="sum" transform-origin="541 480"/>
+    <polygon points="541.5,276 396,553 687,553" fill="#0A2632" opacity="0.26"/>
+    <polygon points="541.5,276 396,553 687,553" fill="none" stroke="#2E9CC4" stroke-width="22" stroke-linejoin="round" opacity="0.20"/>
+    <polygon points="541.5,276 396,553 687,553" fill="none" stroke="#3FB4D8" stroke-width="22" stroke-linejoin="round" opacity="0.20"/>
+    <polygon points="541.5,276 396,553 687,553" fill="none" stroke="#63CCE8" stroke-width="18" stroke-linejoin="round" opacity="0.20"/>
+    <polygon points="541.5,276 396,553 687,553" fill="none" stroke="#96E2F6" stroke-width="14" stroke-linejoin="round" opacity="0.20"/>
+    <polygon points="541.5,276 396,553 687,553" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round" opacity="0.22"/>
+    <polygon points="541.5,276 396,553 687,553" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round" opacity="0.52"/>
+    <animate attributeName="opacity" values="0.86;1;1;0.86;0.86" keyTimes="0;0.2;0.6;0.85;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </g>
+
+  <!-- incident white beam, lower left to the prism face -->
+  <g id="incident">
+    <animate attributeName="opacity" values="1;1;0.55;0.4;0.5;0.6;0.35;0.8;0.9;0.45;0.45;0.7;1" keyTimes="0;0.093;0.127;0.187;0.267;0.347;0.420;0.467;0.520;0.600;0.700;0.867;1" dur="15s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <polygon points="-0.5,523.6 509.5,394.3 506.5,382.7 -3.5,512.0" fill="#CFEAF7" opacity="0.16"/>
+    <polygon points="-1.1,521.3 512.9,391.0 511.1,384.0 -2.9,514.3" fill="#FFFFFF" opacity="0.94"/>
+  </g>
+</svg>
