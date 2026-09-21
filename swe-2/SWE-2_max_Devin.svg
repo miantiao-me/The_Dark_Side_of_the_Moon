@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <title>The Dark Side of the Moon</title>
+  <desc>A glass pyramid on a black background refracts a thin incoming white beam into a rainbow spectrum fanning out to the right, with cyan edge glow, light streaks from the vertices and film grain.</desc>
+  <defs>
+    <filter id="blur4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="blur10" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="blur22" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0.35 0.35 0.35 0 0"/>
+    </filter>
+    <clipPath id="pyrClip"><path d="M542 270 L376 561 L711 561 Z"/></clipPath>
+
+    <linearGradient id="faceL" gradientUnits="userSpaceOnUse" x1="459" y1="415" x2="489" y2="417">
+      <stop offset="0" stop-color="#9fb2ba"/>
+      <stop offset="0.3" stop-color="#14363f"/>
+      <stop offset="0.7" stop-color="#030a0b"/>
+      <stop offset="1" stop-color="#041418"/>
+    </linearGradient>
+    <linearGradient id="faceR" gradientUnits="userSpaceOnUse" x1="627" y1="415" x2="596" y2="417">
+      <stop offset="0" stop-color="#a8bcc5"/>
+      <stop offset="0.3" stop-color="#12313b"/>
+      <stop offset="0.7" stop-color="#02090b"/>
+      <stop offset="1" stop-color="#03121a"/>
+    </linearGradient>
+    <linearGradient id="faceB" gradientUnits="userSpaceOnUse" x1="543" y1="560" x2="543" y2="525">
+      <stop offset="0" stop-color="#a8bfc7"/>
+      <stop offset="0.35" stop-color="#143a45"/>
+      <stop offset="0.65" stop-color="#021a21"/>
+      <stop offset="1" stop-color="#020d10"/>
+    </linearGradient>
+    <linearGradient id="innerG" gradientUnits="userSpaceOnUse" x1="543" y1="306" x2="543" y2="527">
+      <stop offset="0" stop-color="#0a1c22"/>
+      <stop offset="1" stop-color="#020607"/>
+    </linearGradient>
+
+    <linearGradient id="streakUp" gradientUnits="userSpaceOnUse" x1="543" y1="270" x2="543" y2="70">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="streakDL" gradientUnits="userSpaceOnUse" x1="378" y1="560" x2="252" y2="762">
+      <stop offset="0" stop-color="#8fc9d6"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="streakDR" gradientUnits="userSpaceOnUse" x1="708" y1="560" x2="838" y2="762">
+      <stop offset="0" stop-color="#8fc9d6"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="streakDown" gradientUnits="userSpaceOnUse" x1="543" y1="562" x2="544" y2="800">
+      <stop offset="0" stop-color="#6ba9b6"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="gRed" gradientUnits="userSpaceOnUse" x1="640" y1="420" x2="1080" y2="497">
+      <stop offset="0" stop-color="#e00b18"/><stop offset="0.55" stop-color="#e00b18"/><stop offset="1" stop-color="#80070d"/>
+    </linearGradient>
+    <linearGradient id="gOrange" gradientUnits="userSpaceOnUse" x1="640" y1="420" x2="1080" y2="497">
+      <stop offset="0" stop-color="#ec7c05"/><stop offset="0.55" stop-color="#ec7c05"/><stop offset="1" stop-color="#7e4402"/>
+    </linearGradient>
+    <linearGradient id="gYellow" gradientUnits="userSpaceOnUse" x1="640" y1="420" x2="1080" y2="497">
+      <stop offset="0" stop-color="#fce500"/><stop offset="0.55" stop-color="#fce500"/><stop offset="1" stop-color="#8a7d00"/>
+    </linearGradient>
+    <linearGradient id="gGreen" gradientUnits="userSpaceOnUse" x1="640" y1="420" x2="1080" y2="497">
+      <stop offset="0" stop-color="#55ab33"/><stop offset="0.55" stop-color="#55ab33"/><stop offset="1" stop-color="#2e5c1c"/>
+    </linearGradient>
+    <linearGradient id="gBlue" gradientUnits="userSpaceOnUse" x1="640" y1="420" x2="1080" y2="497">
+      <stop offset="0" stop-color="#00a4e0"/><stop offset="0.55" stop-color="#00a4e0"/><stop offset="1" stop-color="#004a68"/>
+    </linearGradient>
+    <linearGradient id="gViolet" gradientUnits="userSpaceOnUse" x1="640" y1="420" x2="1080" y2="497">
+      <stop offset="0" stop-color="#6b60a2"/><stop offset="0.55" stop-color="#6b60a2"/><stop offset="1" stop-color="#3c375a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000000"/>
+
+  <g filter="url(#blur10)">
+    <polygon points="534,272 552,272 543,40" fill="url(#streakUp)" opacity="0.7"/>
+    <polygon points="368,548 388,570 246,768" fill="url(#streakDL)" opacity="0.55"/>
+    <polygon points="718,570 698,548 844,768" fill="url(#streakDR)" opacity="0.55"/>
+    <polygon points="534,561 552,561 544,810" fill="url(#streakDown)" opacity="0.4"/>
+  </g>
+  <polygon points="540,270 546,270 543,120" fill="#ffffff" opacity="0.5" filter="url(#blur4)"/>
+
+  <polygon points="0,496 0,520 466,414 466,392" fill="#cfeef8" opacity="0.5" filter="url(#blur10)"/>
+  <polygon points="0,505 0,511 466,407 466,401" fill="#ffffff"/>
+
+  <g>
+    <g filter="url(#blur10)" opacity="0.55">
+      <polygon points="611,389 617,399 1080,462 1080,444" fill="#e00b18"/>
+      <polygon points="617,399 623,410 1080,479 1080,462" fill="#ec7c05"/>
+      <polygon points="623,410 629,420 1080,497 1080,479" fill="#fce500"/>
+      <polygon points="629,420 636,430 1080,515 1080,497" fill="#55ab33"/>
+      <polygon points="636,430 642,441 1080,532 1080,515" fill="#00a4e0"/>
+      <polygon points="642,441 648,451 1080,550 1080,532" fill="#6b60a2"/>
+    </g>
+    <g>
+      <polygon points="611,389 617,399 1080,462 1080,444" fill="url(#gRed)"/>
+      <polygon points="617,399 623,410 1080,479 1080,462" fill="url(#gOrange)"/>
+      <polygon points="623,410 629,420 1080,497 1080,479" fill="url(#gYellow)"/>
+      <polygon points="629,420 636,430 1080,515 1080,497" fill="url(#gGreen)"/>
+      <polygon points="636,430 642,441 1080,532 1080,515" fill="url(#gBlue)"/>
+      <polygon points="642,441 648,451 1080,550 1080,532" fill="url(#gViolet)"/>
+    </g>
+  </g>
+
+  <path d="M542 270 L376 561 L711 561 Z" fill="none" stroke="#6fd7ea" stroke-width="16" opacity="0.45" filter="url(#blur22)"/>
+  <path d="M542 270 L376 561 L711 561 Z" fill="#0c222a"/>
+  <polygon points="542,270 376,561 436,527 542,306" fill="url(#faceL)"/>
+  <polygon points="542,270 542,306 649,527 711,561" fill="url(#faceR)"/>
+  <polygon points="376,561 711,561 649,527 436,527" fill="url(#faceB)"/>
+  <polygon points="542,306 436,527 649,527" fill="url(#innerG)"/>
+  <line x1="542" y1="302" x2="505" y2="522" stroke="#9fd8e2" stroke-width="2" opacity="0.15" filter="url(#blur4)"/>
+  <polygon points="542,306 436,527 649,527" fill="none" stroke="#b8e2ec" stroke-width="3.5" opacity="0.6" filter="url(#blur10)"/>
+  <polygon points="542,306 436,527 649,527" fill="none" stroke="#d8f2f8" stroke-width="1.5" opacity="0.7" filter="url(#blur4)"/>
+  <path d="M542 270 L376 561 L711 561 Z" fill="none" stroke="#9fdceb" stroke-width="7" opacity="0.75" filter="url(#blur10)"/>
+  <path d="M542 270 L376 561 L711 561 Z" fill="none" stroke="#cfe4ea" stroke-width="2.5" opacity="0.85" filter="url(#blur4)"/>
+  <path d="M542 270 L376 561 L711 561 Z" fill="none" stroke="#e8f6fa" stroke-width="1.2" opacity="0.7"/>
+
+  <g clip-path="url(#pyrClip)">
+    <polygon points="465,394 465,414 652,454 606,384" fill="#cfe9f2" opacity="0.45" filter="url(#blur10)"/>
+    <polygon points="465,397 465,411 648,450 610,388" fill="#c4e4ee" opacity="0.4"/>
+  </g>
+
+  <line x1="425" y1="413" x2="505" y2="395" stroke="#ffffff" stroke-width="16" stroke-linecap="round" opacity="0.55" filter="url(#blur10)"/>
+  <circle cx="465" cy="404" r="10" fill="#ffffff" opacity="0.85" filter="url(#blur4)"/>
+  <circle cx="630" cy="419" r="26" fill="#ffffff" opacity="0.5" filter="url(#blur10)"/>
+  <circle cx="542" cy="270" r="16" fill="#ffffff" opacity="0.35" filter="url(#blur10)"/>
+
+  <rect width="1080" height="1080" filter="url(#grain)" opacity="0.07"/>
+</svg>
