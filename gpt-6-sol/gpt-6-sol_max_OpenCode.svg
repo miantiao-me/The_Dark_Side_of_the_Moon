@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title description">
+  <title id="title">The Dark Side of the Moon — prism</title>
+  <desc id="description">A white ray crosses a glass prism on black and separates into a rainbow. The light comes and goes as the prism glows blue.</desc>
+  <defs>
+    <radialGradient id="glass" gradientUnits="userSpaceOnUse" cx="542" cy="469" r="255">
+      <stop stop-color="#010406"/>
+      <stop offset=".52" stop-color="#02080b"/>
+      <stop offset=".76" stop-color="#0b1b21"/>
+      <stop offset=".91" stop-color="#29434b"/>
+      <stop offset="1" stop-color="#78919a"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="542" y1="269" x2="542" y2="562" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#edfaff"/>
+      <stop offset=".28" stop-color="#8cb5c1"/>
+      <stop offset=".75" stop-color="#5b8591"/>
+      <stop offset="1" stop-color="#c2e1e7"/>
+    </linearGradient>
+    <linearGradient id="tip" x1="542" y1="267" x2="542" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d7f1f6" stop-opacity=".56"/>
+      <stop offset="1" stop-color="#d7f1f6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="insideRay" x1="463" y1="399" x2="641" y2="401" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#b8dce7" stop-opacity=".52"/>
+      <stop offset="1" stop-color="#c9d7dc" stop-opacity=".29"/>
+    </linearGradient>
+    <radialGradient id="footGlow">
+      <stop stop-color="#9de9ff" stop-opacity=".39"/>
+      <stop offset=".3" stop-color="#5ba6c3" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#2b6b8e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leftFacet" x1="387" y1="552" x2="533" y2="409" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c4f7ff" stop-opacity=".31"/>
+      <stop offset=".26" stop-color="#71dafa" stop-opacity=".09"/>
+      <stop offset="1" stop-color="#62c6e6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rightFacet" x1="695" y1="552" x2="551" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c4f7ff" stop-opacity=".29"/>
+      <stop offset=".26" stop-color="#71dafa" stop-opacity=".09"/>
+      <stop offset="1" stop-color="#62c6e6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-60%" width="200%" height="220%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="11"/>
+    </filter>
+    <filter id="bloom" x="-50%" y="-65%" width="200%" height="230%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <filter id="fine" x="-30%" y="-40%" width="160%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="spectrumBloom" x="-15%" y="-130%" width="130%" height="360%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <clipPath id="rayWindow">
+      <rect x="0" y="0" width="466" height="1080">
+        <animate attributeName="width" dur="15s" repeatCount="indefinite" keyTimes="0;.14;.18;.395;.455;.48;.60;.64;.875;.94;1" values="466;466;466;0;466;466;466;466;0;466;466"/>
+      </rect>
+    </clipPath>
+    <g id="colors">
+      <path d="M600 371 1080 443 1080 460 605 380Z" fill="#ed0920"/>
+      <path d="M605 380 1080 460 1080 477 610 389Z" fill="#ff941c"/>
+      <path d="M610 389 1080 477 1080 494 616 399Z" fill="#ffdc20"/>
+      <path d="M616 399 1080 494 1080 509 621 408Z" fill="#dbeb27"/>
+      <path d="M621 408 1080 509 1080 523 627 417Z" fill="#61be4d"/>
+      <path d="M627 417 1080 523 1080 536 632 426Z" fill="#24abd4"/>
+      <path d="M632 426 1080 536 1080 550 636 434Z" fill="#7872a9"/>
+    </g>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000"/>
+
+  <g opacity="1">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.12;.155;.20;.40;.45;.48;.58;.605;.64;.87;.90;.94;1" values="1;1;0;0;0;0;1;1;1;0;0;0;1;1"/>
+    <g opacity=".08" filter="url(#spectrumBloom)">
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.42;.49;.58;.63;.90;1" values=".08;.08;1;1;.08;.08;.08"/>
+      <use href="#colors"/>
+    </g>
+    <use href="#colors"/>
+  </g>
+
+  <g clip-path="url(#rayWindow)">
+    <g>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.13;.18;.39;.455;.48;.60;.64;.87;.94;1" values="1;1;0;0;1;1;1;0;0;1;1"/>
+      <path d="M-4 520 467 400" fill="none" stroke="#ffffff" stroke-width="3.7"/>
+      <path d="M-4 520 467 400" fill="none" stroke="#c5edff" stroke-opacity=".27" stroke-width="8" filter="url(#fine)"/>
+    </g>
+  </g>
+
+  <g id="prism">
+    <path d="M542 269 374 562H710Z" fill="url(#glass)"/>
+    <path d="M542 269 374 562H710Z" fill="url(#tip)" opacity=".78"/>
+    <path d="M542 269 374 562H710Z" fill="none" stroke="#9ec8d2" stroke-opacity=".36" stroke-width="11" filter="url(#fine)"/>
+    <path d="M542 269 374 562H710Z" fill="none" stroke="url(#rim)" stroke-opacity=".42" stroke-width="1.5"/>
+  </g>
+
+  <g>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.12;.155;.20;.40;.45;.48;.58;.605;.64;.87;.90;.94;1" values="1;1;0;0;0;0;1;1;1;0;0;0;1;1"/>
+    <path d="M466 401 600 371 636 434Z" fill="url(#insideRay)"/>
+    <path d="M466 401 600 371 636 434Z" fill="#b7ebff" opacity=".26" filter="url(#fine)"/>
+    <circle cx="466" cy="401" r="4" fill="#fff" opacity=".35" filter="url(#fine)"/>
+  </g>
+
+  <g opacity=".02">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.13;.19;.24;.35;.41;.50;.56;.64;.75;.85;.91;1" values=".02;.02;.75;1;.84;.53;.65;.8;.95;.78;.42;.12;.02"/>
+    <ellipse cx="542" cy="571" rx="278" ry="153" fill="url(#footGlow)"/>
+    <path d="M374 556 254 711 542 540Z M710 556 830 711 542 540Z" fill="#5eb6d1" opacity=".14" filter="url(#bloom)"/>
+    <path d="M542 269 374 562H710Z" fill="none" stroke="#4bd2f3" stroke-width="26" opacity=".49" filter="url(#bloom)"/>
+    <path d="M542 269 374 562H710Z" fill="none" stroke="#8ce7ff" stroke-width="15" opacity=".7" filter="url(#soft)"/>
+    <path d="M542 269 374 562H710Z" fill="none" stroke="#baf3ff" stroke-width="8" opacity=".8" filter="url(#fine)"/>
+    <path d="M542 269 374 562H710Z" fill="none" stroke="#e6faff" stroke-width="3" opacity=".97"/>
+    <path d="M542 269 374 562 542 540Z" fill="url(#leftFacet)"/>
+    <path d="M542 269 710 562 542 540Z" fill="url(#rightFacet)"/>
+    <path d="M374 562 542 540 710 562" fill="#a9ebfb" fill-opacity=".1" stroke="#d1f7ff" stroke-width="1.3" stroke-opacity=".75"/>
+    <path d="M374 562 542 540 710 562" fill="none" stroke="#84e0ff" stroke-width="8" opacity=".58" filter="url(#soft)"/>
+  </g>
+
+  <g opacity="0">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.14;.21;.25;.35;.44;.49;.61;.66;.71;.82;.89;1" values="0;0;.67;1;.7;.27;.02;.02;.74;1;.34;.05;0"/>
+    <path d="M542 271 542 540" fill="none" stroke="#65dcff" stroke-width="22" opacity=".75" filter="url(#soft)"/>
+    <path d="M542 271 542 540" fill="none" stroke="#baf3ff" stroke-width="9" opacity=".9" filter="url(#fine)"/>
+    <path d="M542 271 542 540" fill="none" stroke="#e9fcff" stroke-width="2.3" opacity=".95"/>
+    <circle cx="542" cy="541" r="17" fill="#b7f0ff" opacity=".9" filter="url(#soft)"/>
+  </g>
+</svg>

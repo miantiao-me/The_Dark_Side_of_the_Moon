@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none">
+  <title>The Dark Side of the Moon — prism and spectrum</title>
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d7ffff" stop-opacity=".48"/>
+      <stop offset=".24" stop-color="#16454d" stop-opacity=".34"/>
+      <stop offset=".58" stop-color="#02090b" stop-opacity=".82"/>
+      <stop offset="1" stop-color="#a8faff" stop-opacity=".43"/>
+    </linearGradient>
+    <linearGradient id="incoming" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f5ffff" stop-opacity=".94"/>
+      <stop offset=".76" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d9ffff" stop-opacity=".78"/>
+    </linearGradient>
+    <linearGradient id="spectrum" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff2639"/>
+      <stop offset=".18" stop-color="#ff8b16"/>
+      <stop offset=".35" stop-color="#ffe72c"/>
+      <stop offset=".52" stop-color="#45f278"/>
+      <stop offset=".69" stop-color="#15dfff"/>
+      <stop offset=".84" stop-color="#3974ff"/>
+      <stop offset="1" stop-color="#9b65ff"/>
+    </linearGradient>
+    <filter id="prismGlow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="13"/>
+    </filter>
+    <filter id="beamGlow" x="-10%" y="-100%" width="120%" height="300%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="spectrumGlow" x="-10%" y="-60%" width="120%" height="220%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
+    <clipPath id="spectrumShape">
+      <path d="M603 370 L1080 443 L1080 548 L635 428 Z"/>
+    </clipPath>
+  </defs>
+
+  <path fill="#000" d="M0 0h1080v1080H0z"/>
+
+  <!-- The glass catches a cool, diffuse rim light against the black field. -->
+  <path d="M542 270 710 562H374L542 270Z" stroke="#8df7ff" stroke-width="5" opacity=".72" filter="url(#prismGlow)"/>
+  <path d="M542 270 710 562H374L542 270Z" fill="url(#glass)"/>
+
+  <path d="M0 519 466 397 603 370 635 428 466 405 0 523Z" fill="#d7ffff" opacity=".14" filter="url(#beamGlow)"/>
+  <path d="M0 519 466 397 603 370 635 428 466 405 0 523Z" fill="url(#incoming)" opacity=".78"/>
+  <path d="M0 520 466 400" stroke="#f5ffff" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M603 370 1080 443 1080 548 635 428Z" fill="url(#spectrum)" opacity=".32" filter="url(#spectrumGlow)"/>
+  <g clip-path="url(#spectrumShape)">
+    <path d="M603 370 1080 443 1080 458.8 608.4 379.7Z" fill="#ff293c"/>
+    <path d="M608.4 379.7 1080 458.8 1080 474.6 613.8 389.4Z" fill="#ff9218"/>
+    <path d="M613.8 389.4 1080 474.6 1080 492.3 618.7 399.6Z" fill="#ffe52c"/>
+    <path d="M618.7 399.6 1080 492.3 1080 509.1 623.2 409.9Z" fill="#40ed72"/>
+    <path d="M623.2 409.9 1080 509.1 1080 526.1 628.0 419.6Z" fill="#12dcf5"/>
+    <path d="M628.0 419.6 1080 526.1 1080 538.6 631.8 425.2Z" fill="#3475ff"/>
+    <path d="M631.8 425.2 1080 538.6 1080 548 635 428Z" fill="#9861ed"/>
+  </g>
+
+  <path d="M542 270 710 562H374L542 270Z" stroke="#c4ffff" stroke-width="2.2" opacity=".9" stroke-linejoin="round"/>
+  <path d="M542 273 707 559H377L542 273Z" stroke="#f1ffff" stroke-width=".8" opacity=".62" stroke-linejoin="round"/>
+  <path d="M542 282V555" stroke="#b9fcff" stroke-width="1" opacity=".13"/>
+</svg>

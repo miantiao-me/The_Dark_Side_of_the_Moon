@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">The Dark Side of the Moon — prism and light</title>
+  <desc id="desc">A white ray enters a glass prism and spreads into a rainbow. The light fades while the prism glows and turns, then the sequence repeats.</desc>
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d9ebee" stop-opacity=".78"/>
+      <stop offset=".09" stop-color="#223941" stop-opacity=".38"/>
+      <stop offset=".38" stop-color="#061319" stop-opacity=".85"/>
+      <stop offset=".93" stop-color="#010607" stop-opacity=".94"/>
+      <stop offset="1" stop-color="#9fbdc4" stop-opacity=".6"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eaf9fb" stop-opacity=".8"/>
+      <stop offset=".52" stop-color="#6b929c" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#d9f6fb" stop-opacity=".85"/>
+    </linearGradient>
+    <linearGradient id="insideRay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f4ffff" stop-opacity=".94"/>
+      <stop offset=".5" stop-color="#b5e6ee" stop-opacity=".37"/>
+      <stop offset="1" stop-color="#e6f9fc" stop-opacity=".16"/>
+    </linearGradient>
+    <linearGradient id="glowFill" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8bd5e7" stop-opacity=".34"/>
+      <stop offset=".19" stop-color="#075368" stop-opacity=".3"/>
+      <stop offset=".58" stop-color="#00090d" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#164450" stop-opacity=".43"/>
+    </linearGradient>
+    <radialGradient id="floorGlow">
+      <stop offset="0" stop-color="#8bdde9" stop-opacity=".35"/>
+      <stop offset=".35" stop-color="#2e98b0" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="wide" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="19"/>
+    </filter>
+    <clipPath id="triangleClip"><path d="M542 269 710 563H374Z"/></clipPath>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000"/>
+
+  <g id="spectrum" opacity="1">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear"
+      keyTimes="0;.12;.16;.38;.43;.49;.56;.85;.94;1"
+      values="1;1;0;0;1;1;0;0;1;1"/>
+    <g opacity=".45" filter="url(#soft)">
+      <path d="M600 371 1080 444v103L630 432Z" fill="#9b85df"/>
+    </g>
+    <path d="M600 371 1080 444v17L609 386Z" fill="#f10718"/>
+    <path d="M609 386 1080 461v17L618 401Z" fill="#ff8a08"/>
+    <path d="M618 401 1080 478v17L627 416Z" fill="#ffe51b"/>
+    <path d="M627 416 1080 495v17L636 431Z" fill="#59c33b"/>
+    <path d="M636 431 1080 512v17L645 446Z" fill="#0a9de7"/>
+    <path d="M645 446 1080 529v18L652 461Z" fill="#8467ad"/>
+    <path d="M-4 522 466 401" fill="none" stroke="#c5efff" stroke-width="12" opacity=".26" filter="url(#soft)"/>
+    <path d="M-4 522 466 401" fill="none" stroke="#fff" stroke-width="4.5"/>
+  </g>
+
+  <g id="quiet-glass" opacity="1">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear"
+      keyTimes="0;.12;.16;.38;.43;.49;.56;.85;.94;1"
+      values="1;1;0;0;1;1;0;0;1;1"/>
+    <path d="M542 269 710 563H374Z" fill="url(#glass)"/>
+    <path d="M542 269 710 563H374Z" fill="none" stroke="#9bd6e0" stroke-width="8" opacity=".21" filter="url(#soft)"/>
+    <path d="M542 269 710 563H374Z" fill="none" stroke="url(#edge)" stroke-width="2" opacity=".48"/>
+    <g clip-path="url(#triangleClip)">
+      <path d="M466 400 600 370 636 432Z" fill="url(#insideRay)"/>
+      <path d="M464 400 600 370" fill="none" stroke="#d8f8ff" stroke-width="1.3" opacity=".55"/>
+    </g>
+  </g>
+
+  <g id="luminous-prism" opacity="0">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear"
+      keyTimes="0;.12;.16;.37;.43;.52;.59;.86;.94;1"
+      values="0;0;1;1;0;0;1;1;0;0"/>
+    <ellipse cx="542" cy="571" rx="260" ry="82" fill="url(#floorGlow)"/>
+    <path d="M542 269 710 563H374Z" fill="url(#glowFill)"/>
+    <path d="M542 269 710 563H374Z" fill="none" stroke="#9defff" stroke-width="34" opacity=".35" filter="url(#wide)"/>
+    <path d="M542 269 710 563H374Z" fill="none" stroke="#9beaff" stroke-width="12" opacity=".7" filter="url(#soft)"/>
+    <path d="M542 269 710 563H374Z" fill="none" stroke="#d1faff" stroke-width="3.3" opacity=".9"/>
+    <path d="M542 269 512 541" fill="none" stroke="#a9edfc" stroke-width="20" opacity=".45" filter="url(#soft)">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite" calcMode="linear"
+        keyTimes="0;.17;.24;.32;.39;.46;.57;.67;.75;.84;.92;1"
+        values="M542 269 512 541;M542 269 512 541;M542 269 548 551;M542 269 588 567;M542 269 645 555;M542 269 542 551;M542 269 510 549;M542 269 592 568;M542 269 550 550;M542 269 515 555;M542 269 512 541;M542 269 512 541"/>
+    </path>
+    <path d="M542 269 512 541" fill="none" stroke="#c6f8ff" stroke-width="2.5" opacity=".87">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite" calcMode="linear"
+        keyTimes="0;.17;.24;.32;.39;.46;.57;.67;.75;.84;.92;1"
+        values="M542 269 512 541;M542 269 512 541;M542 269 548 551;M542 269 588 567;M542 269 645 555;M542 269 542 551;M542 269 510 549;M542 269 592 568;M542 269 550 550;M542 269 515 555;M542 269 512 541;M542 269 512 541"/>
+    </path>
+    <path d="M374 563 512 541 710 563" fill="none" stroke="#9defff" stroke-width="14" opacity=".42" filter="url(#soft)">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite" calcMode="linear"
+        keyTimes="0;.17;.24;.32;.39;.46;.57;.67;.75;.84;.92;1"
+        values="M374 563 512 541 710 563;M374 563 512 541 710 563;M374 563 548 551 710 563;M374 563 588 567 710 563;M374 563 645 555 710 563;M374 563 542 551 710 563;M374 563 510 549 710 563;M374 563 592 568 710 563;M374 563 550 550 710 563;M374 563 515 555 710 563;M374 563 512 541 710 563;M374 563 512 541 710 563"/>
+    </path>
+    <path d="M374 563 512 541 710 563" fill="none" stroke="#bef4ff" stroke-width="1.7" opacity=".56">
+      <animate attributeName="d" dur="15s" repeatCount="indefinite" calcMode="linear"
+        keyTimes="0;.17;.24;.32;.39;.46;.57;.67;.75;.84;.92;1"
+        values="M374 563 512 541 710 563;M374 563 512 541 710 563;M374 563 548 551 710 563;M374 563 588 567 710 563;M374 563 645 555 710 563;M374 563 542 551 710 563;M374 563 510 549 710 563;M374 563 592 568 710 563;M374 563 550 550 710 563;M374 563 515 555 710 563;M374 563 512 541 710 563;M374 563 512 541 710 563"/>
+    </path>
+  </g>
+</svg>

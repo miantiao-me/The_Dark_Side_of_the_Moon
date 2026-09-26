@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <title>The Dark Side of the Moon</title>
+  <desc>A white ray meets a glass prism, becomes a rainbow, then leaves the prism glowing in the dark. The sequence repeats over fifteen seconds.</desc>
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#d9ecf4" stop-opacity=".86"/>
+      <stop offset=".095" stop-color="#789ba9" stop-opacity=".56"/>
+      <stop offset=".29" stop-color="#102b36" stop-opacity=".75"/>
+      <stop offset=".58" stop-color="#010609"/>
+      <stop offset=".82" stop-color="#020b0f"/>
+      <stop offset=".94" stop-color="#274956" stop-opacity=".76"/>
+      <stop offset="1" stop-color="#d0edf5" stop-opacity=".89"/>
+    </linearGradient>
+    <linearGradient id="leftFace" x1="0" y1="0" x2="1" y2=".15">
+      <stop stop-color="#b1d8e6" stop-opacity=".65"/>
+      <stop offset=".20" stop-color="#496d7a" stop-opacity=".27"/>
+      <stop offset=".76" stop-color="#06151b" stop-opacity=".09"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rightFace" x1="1" y1="0" x2="0" y2=".2">
+      <stop stop-color="#add5e3" stop-opacity=".52"/>
+      <stop offset=".26" stop-color="#456b7a" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#001016" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="269" x2="0" y2="563" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e2f6ff" stop-opacity=".78"/>
+      <stop offset=".16" stop-color="#88aebf" stop-opacity=".46"/>
+      <stop offset=".61" stop-color="#6a9ead" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#ddf5ff" stop-opacity=".72"/>
+    </linearGradient>
+    <linearGradient id="refraction" x1="0" y1="0" x2=".16" y2="1">
+      <stop stop-color="#f1ffff" stop-opacity=".83"/>
+      <stop offset=".31" stop-color="#e7f7fc" stop-opacity=".79"/>
+      <stop offset=".78" stop-color="#a1c9d5" stop-opacity=".39"/>
+      <stop offset="1" stop-color="#6d9eac" stop-opacity=".18"/>
+    </linearGradient>
+    <linearGradient id="litGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#eaffff" stop-opacity=".35"/>
+      <stop offset=".20" stop-color="#32687c" stop-opacity=".29"/>
+      <stop offset=".66" stop-color="#051d26" stop-opacity=".13"/>
+      <stop offset=".89" stop-color="#204f62" stop-opacity=".17"/>
+      <stop offset="1" stop-color="#d5fbff" stop-opacity=".62"/>
+    </linearGradient>
+    <linearGradient id="baseLight" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#c0f5ff" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#55bdde" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="apexGlow"><stop stop-color="#d9fbff" stop-opacity=".62"/><stop offset=".29" stop-color="#92e4ff" stop-opacity=".24"/><stop offset="1" stop-color="#4badce" stop-opacity="0"/></radialGradient>
+    <filter id="smallBlur" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="softBlur" x="-60%" y="-70%" width="220%" height="240%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="wideBlur" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="21"/></filter>
+    <clipPath id="triangle"><path d="M542 269 710 563H374Z"/></clipPath>
+    <mask id="enterWindow" maskUnits="userSpaceOnUse" x="0" y="360" width="480" height="175">
+      <rect x="0" y="360" width="480" height="175" fill="white">
+        <animate attributeName="width" dur="15s" repeatCount="indefinite" keyTimes="0;.095;.115;.14;.405;.418;.435;.458;.57;.614;.887;.90;.92;.943;.96;1" values="480;480;300;0;0;30;270;480;480;0;0;30;270;480;480;480"/>
+      </rect>
+    </mask>
+    <mask id="exitWindow" maskUnits="userSpaceOnUse" x="590" y="350" width="490" height="205">
+      <rect x="590" y="350" width="490" height="205" fill="white">
+        <animate attributeName="width" dur="15s" repeatCount="indefinite" keyTimes="0;.115;.14;.45;.458;.468;.59;.62;.928;.94;.95;1" values="490;490;0;0;200;490;490;0;0;200;490;490"/>
+      </rect>
+    </mask>
+    <g id="colors">
+      <path fill="#ea1120" d="M599 370 1080 444V461L606 381Z"/>
+      <path fill="#ff9a1e" d="M606 381 1080 461V478L613 392Z"/>
+      <path fill="#ffe636" d="M613 392 1080 478V495L620 403Z"/>
+      <path fill="#3ab750" d="M620 403 1080 495V512L627 415Z"/>
+      <path fill="#20aad3" d="M627 415 1080 512V530L633 426Z"/>
+      <path fill="#8274b5" d="M633 426 1080 530V548L640 437Z"/>
+    </g>
+  </defs>
+  <path fill="#000" d="M0 0H1080V1080H0Z"/>
+
+  <g mask="url(#exitWindow)">
+    <g id="spectrum">
+      <use xlink:href="#colors" opacity=".65" filter="url(#softBlur)"/>
+      <use xlink:href="#colors"/>
+      <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.098;.128;.15;.45;.46;.468;.58;.60;.625;.928;.941;.95;1" values="1;1;.55;0;0;.5;1;1;.48;0;0;.5;1;1"/>
+    </g>
+  </g>
+
+  <g mask="url(#enterWindow)" id="incident">
+    <path d="M-4 521 466 402" fill="none" stroke="#aee1f2" stroke-width="10" opacity=".27" filter="url(#smallBlur)"/>
+    <path d="M-4 521 466 402" fill="none" stroke="#f4fcff" stroke-width="3.8"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.105;.13;.145;.405;.442;.46;.575;.605;.625;.89;.925;.95;1" values="1;1;.4;0;0;.75;1;1;.35;0;0;.8;1;1"/>
+  </g>
+
+  <!-- The outline and facets remain even when the light has gone. -->
+  <path d="M542 269 710 563H374Z" fill="url(#glass)"/>
+  <g clip-path="url(#triangle)">
+    <path d="M542 269 374 563H471Z" fill="url(#leftFace)"/>
+    <path d="M542 269 710 563H627Z" fill="url(#rightFace)"/>
+    <path d="M372 556Q542 535 712 556V583H372Z" fill="#8ac6d7" opacity=".16" filter="url(#softBlur)"/>
+  </g>
+  <path d="M542 269 710 563H374Z" fill="none" stroke="url(#rim)" stroke-width="1.7" opacity=".8"/>
+  <path d="M374 563H710" fill="none" stroke="#afdeea" stroke-width="8" opacity=".35" filter="url(#softBlur)"/>
+
+  <g id="throughGlass">
+    <path d="M465 402 599 370 636 431Z" fill="url(#refraction)"/>
+    <path d="M465 402 599 370" fill="none" stroke="#f5ffff" stroke-opacity=".65" stroke-width="1.8"/>
+    <path d="M465 402 599 370 636 431Z" fill="none" stroke="#d9f3fa" stroke-width="6" opacity=".22" filter="url(#smallBlur)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.106;.128;.15;.45;.466;.483;.581;.607;.624;.932;.953;.971;1" values="1;1;.5;0;0;.3;1;1;.35;0;0;.3;1;1"/>
+  </g>
+
+  <g id="charged" opacity=".05">
+    <ellipse cx="542" cy="269" rx="69" ry="92" fill="url(#apexGlow)"/>
+    <path d="M542 269 710 563H374Z" fill="url(#litGlass)" opacity=".55"/>
+    <path d="M374 562 542 269 710 562" fill="none" stroke="#65cfff" stroke-width="24" opacity=".48" filter="url(#wideBlur)"/>
+    <path d="M374 563H710" fill="none" stroke="#8fe6ff" stroke-width="23" opacity=".52" filter="url(#wideBlur)"/>
+    <path d="M374 563 542 269 710 563H374" fill="none" stroke="#cff5ff" stroke-width="19" opacity=".7" filter="url(#softBlur)"/>
+    <path d="M374 563 542 269 710 563H374" fill="none" stroke="#87dfff" stroke-width="7" opacity=".9" filter="url(#smallBlur)"/>
+    <path d="M374 563 542 269 710 563H374" fill="none" stroke="#eefcff" stroke-width="2.2" opacity=".96"/>
+    <path d="M374 563 511 540 710 563" fill="none" stroke="#9bdef0" stroke-width="5" opacity=".52" filter="url(#smallBlur)"/>
+    <path d="M374 563 511 540 710 563" fill="none" stroke="#c5f4ff" stroke-width="1.4" opacity=".54"/>
+    <path d="M374 561H710L822 668 542 588 260 668Z" fill="url(#baseLight)" opacity=".42" filter="url(#softBlur)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.095;.124;.16;.205;.24;.33;.39;.425;.455;.50;.565;.61;.7;.83;.88;.925;.955;1" values=".05;.07;.38;.75;.9;1;.84;.43;.37;.77;.87;1;1;.85;.71;.25;.18;.12;.05"/>
+  </g>
+
+  <g id="insideRay" opacity="0">
+    <path d="M542 269Q532 391 513 540" fill="none" stroke="#7fe0fa" stroke-width="20" opacity=".38" filter="url(#softBlur)"/>
+    <path d="M542 269Q532 391 513 540" fill="none" stroke="#c9f6ff" stroke-width="3.2" opacity=".77" filter="url(#smallBlur)"/>
+    <path d="M542 269Q532 391 513 540" fill="none" stroke="#d5f8ff" stroke-width="1.5" opacity=".45"/>
+    <path d="M511 540 494 602" fill="none" stroke="#80d8f4" stroke-width="12" opacity=".29" filter="url(#softBlur)"/>
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" keyTimes="0;.12;.15;.21;.25;.32;.39;.415;.47;.59;.64;.69;.78;.85;.89;1" values="0;0;.24;1;.48;1;.13;0;0;0;.24;1;.6;.17;0;0"/>
+  </g>
+</svg>

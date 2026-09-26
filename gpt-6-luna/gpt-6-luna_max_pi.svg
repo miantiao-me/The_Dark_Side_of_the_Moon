@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <radialGradient id="prismGlass" cx="50%" cy="48%" r="67%">
+      <stop offset="0" stop-color="#000203"/>
+      <stop offset=".66" stop-color="#02090d"/>
+      <stop offset="1" stop-color="#173139"/>
+    </radialGradient>
+    <linearGradient id="prismEdge" x1="374" y1="562" x2="710" y2="269" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d4f8fb" stop-opacity=".82"/>
+      <stop offset=".45" stop-color="#8feaf5" stop-opacity=".66"/>
+      <stop offset=".72" stop-color="#ecffff" stop-opacity=".92"/>
+      <stop offset="1" stop-color="#b4e6ed" stop-opacity=".74"/>
+    </linearGradient>
+    <linearGradient id="incoming" x1="0" y1="518" x2="470" y2="398" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7ffff" stop-opacity=".94"/>
+      <stop offset="1" stop-color="#e8ffff" stop-opacity=".98"/>
+    </linearGradient>
+    <linearGradient id="red" x1="600" y1="370" x2="1080" y2="443" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff362d"/><stop offset="1" stop-color="#fb1731"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="600" y1="380.5" x2="1080" y2="460.3" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff9c00"/><stop offset="1" stop-color="#ff7900"/>
+    </linearGradient>
+    <linearGradient id="yellow" x1="600" y1="391" x2="1080" y2="477.7" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff500"/><stop offset="1" stop-color="#ffe900"/>
+    </linearGradient>
+    <linearGradient id="green" x1="600" y1="401.5" x2="1080" y2="495" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#69e339"/><stop offset="1" stop-color="#35be45"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="600" y1="412" x2="1080" y2="512.3" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00d7ec"/><stop offset="1" stop-color="#009ee3"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="600" y1="422.5" x2="1080" y2="529.7" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9a73d4"/><stop offset="1" stop-color="#7460bd"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="17"/>
+    </filter>
+    <filter id="wideGlow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="beamGlow" x="-30%" y="-300%" width="160%" height="700%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="lineGlow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <clipPath id="spectrumClip">
+      <rect x="600" y="350" width="480" height="220"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000"/>
+
+  <g clip-path="url(#spectrumClip)">
+    <g opacity=".47" filter="url(#wideGlow)">
+      <path d="M600 370 L1080 443 L1080 547 L600 433 Z" fill="#ff2948"/>
+    </g>
+    <g opacity=".72" filter="url(#softGlow)">
+      <path d="M600 370 L1080 443 L1080 460.3 L600 380.5 Z" fill="#ff302e"/>
+      <path d="M600 380.5 L1080 460.3 L1080 477.7 L600 391 Z" fill="#ff9200"/>
+      <path d="M600 391 L1080 477.7 L1080 495 L600 401.5 Z" fill="#fff000"/>
+      <path d="M600 401.5 L1080 495 L1080 512.3 L600 412 Z" fill="#53d83d"/>
+      <path d="M600 412 L1080 512.3 L1080 529.7 L600 422.5 Z" fill="#00c9ee"/>
+      <path d="M600 422.5 L1080 529.7 L1080 547 L600 433 Z" fill="#8d72d2"/>
+    </g>
+  </g>
+
+  <path d="M0 518 L470 398" fill="none" stroke="#c9fbff" stroke-width="19" opacity=".52" filter="url(#beamGlow)"/>
+  <path d="M0 518 L470 398" fill="none" stroke="url(#incoming)" stroke-width="5"/>
+
+  <path d="M542 269 L374 562 L710 562 Z" fill="url(#prismGlass)"/>
+  <path d="M542 269 L374 562 L710 562 Z" fill="none" stroke="#48d9ed" stroke-width="30" opacity=".18" filter="url(#wideGlow)"/>
+  <path d="M542 269 L374 562 L710 562 Z" fill="none" stroke="#83edfa" stroke-width="15" opacity=".3" filter="url(#softGlow)"/>
+  <path d="M542 269 L374 562 L710 562 Z" fill="none" stroke="url(#prismEdge)" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M542 279 L383 556 L701 556 Z" fill="none" stroke="#9beeff" stroke-width="1" opacity=".18" stroke-linejoin="round"/>
+
+  <g clip-path="url(#spectrumClip)">
+    <path d="M600 370 L1080 443 L1080 460.3 L600 380.5 Z" fill="url(#red)"/>
+    <path d="M600 380.5 L1080 460.3 L1080 477.7 L600 391 Z" fill="url(#orange)"/>
+    <path d="M600 391 L1080 477.7 L1080 495 L600 401.5 Z" fill="url(#yellow)"/>
+    <path d="M600 401.5 L1080 495 L1080 512.3 L600 412 Z" fill="url(#green)"/>
+    <path d="M600 412 L1080 512.3 L1080 529.7 L600 422.5 Z" fill="url(#blue)"/>
+    <path d="M600 422.5 L1080 529.7 L1080 547 L600 433 Z" fill="url(#violet)"/>
+  </g>
+
+  <path d="M470 398 L600 401.5" fill="none" stroke="#eaffff" stroke-width="13" opacity=".44" filter="url(#lineGlow)"/>
+  <path d="M470 398 L600 401.5" fill="none" stroke="#efffff" stroke-width="2.5" opacity=".64"/>
+</svg>

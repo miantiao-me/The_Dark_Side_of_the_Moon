@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" overflow="hidden">
+  <defs>
+    <polygon id="prism" points="541.3,269.9 374.3,561 708.9,561"/>
+    <clipPath id="prismClip"><use href="#prism"/></clipPath>
+    <clipPath id="beamClip">
+      <rect y="280" height="360" x="0" width="520">
+        <animate attributeName="x" dur="15s" repeatCount="indefinite" calcMode="linear" keyTimes="0.0000;0.0760;0.1147;0.1160;0.4147;0.4267;0.4347;0.4427;0.4493;0.5600;0.6013;0.6027;0.8947;0.9067;0.9173;0.9253;0.9307;1.0000" values="0;0;490;0;0;0;0;0;0;0;490;0;0;0;0;0;0;0"/>
+        <animate attributeName="width" dur="15s" repeatCount="indefinite" calcMode="linear" keyTimes="0.0000;0.0760;0.1147;0.1160;0.4147;0.4267;0.4347;0.4427;0.4493;0.5600;0.6013;0.6027;0.8947;0.9067;0.9173;0.9253;0.9307;1.0000" values="520;520;0;0;0;70;160;410;520;520;0;0;0;50;170;410;520;520"/>
+      </rect>
+    </clipPath>
+    <clipPath id="specClip">
+      <rect y="250" height="400" x="540" width="600">
+        <animate attributeName="x" dur="15s" repeatCount="indefinite" calcMode="linear" keyTimes="0.0000;0.1173;0.1440;0.1453;0.4560;0.4640;0.4720;0.4773;0.5973;0.6293;0.6307;0.9387;0.9467;0.9547;1.0000" values="540;540;1120;540;540;540;540;540;540;1120;540;540;540;540;540"/>
+        <animate attributeName="width" dur="15s" repeatCount="indefinite" calcMode="linear" keyTimes="0.0000;0.1173;0.1440;0.1453;0.4560;0.4640;0.4720;0.4773;0.5973;0.6293;0.6307;0.9387;0.9467;0.9547;1.0000" values="600;600;0;0;0;280;500;600;600;0;0;0;300;600;600"/>
+      </rect>
+    </clipPath>
+    <linearGradient id="edgeGrad" gradientUnits="userSpaceOnUse" x1="541" y1="270" x2="541" y2="561">
+      <stop offset="0" stop-color="#f4f8f9"/>
+      <stop offset="0.12" stop-color="#b7c9d1"/>
+      <stop offset="0.5" stop-color="#a9bdc6"/>
+      <stop offset="0.82" stop-color="#93aab3"/>
+      <stop offset="1" stop-color="#6e868f"/>
+    </linearGradient>
+    <radialGradient id="prismLight" gradientUnits="userSpaceOnUse" cx="528" cy="400" r="200">
+      <stop offset="0" stop-color="#f5fcff"/>
+      <stop offset="0.4" stop-color="#8ec8d6"/>
+      <stop offset="1" stop-color="#2f7486"/>
+    </radialGradient>
+    <linearGradient id="entryFade" gradientUnits="userSpaceOnUse" x1="466" y1="399" x2="548" y2="405">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.62" stop-color="#f4fcff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="entryBlob" gradientUnits="userSpaceOnUse" cx="492" cy="400" r="48">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#eaf6fb" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="edgeBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.6"/>
+    </filter>
+    <filter id="specBloom" x="-6%" y="-25%" width="112%" height="150%">
+      <feGaussianBlur stdDeviation="1.35"/>
+    </filter>
+    <filter id="entryBlur" x="-40%" y="-80%" width="180%" height="260%">
+      <feGaussianBlur stdDeviation="3.4"/>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <filter id="halo" filterUnits="userSpaceOnUse" x="180" y="60" width="760" height="620">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="haloNear" filterUnits="userSpaceOnUse" x="250" y="140" width="600" height="500">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="hair" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="0.35"/>
+    </filter>
+    <g id="bands">
+      <polygon fill="#E10B17" points="598.6,369.5 603.8,378.4 1100.0,463.9 1100.0,446.8"/>
+      <polygon fill="#EC7C06" points="604.5,379.6 609.6,388.6 1100.0,481.7 1100.0,464.6"/>
+      <polygon fill="#FCE400" points="610.3,389.8 615.5,398.8 1100.0,499.1 1100.0,482.0"/>
+      <polygon fill="#53A931" points="616.6,400.7 621.7,409.6 1100.0,516.5 1100.0,499.4"/>
+      <polygon fill="#00A4E1" points="622.9,411.7 628.0,420.6 1100.0,533.8 1100.0,516.7"/>
+      <polygon fill="#7061A2" points="629.5,423.1 634.6,432.0 1100.0,551.7 1100.0,534.6"/>
+    </g>
+  </defs>
+  <rect width="1080" height="1080" fill="#000000"/>
+  <g opacity="0.02">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear" keyTimes="0.0000;0.1133;0.1440;0.1700;0.2200;0.2800;0.3000;0.3467;0.3833;0.4167;0.4367;0.4633;0.5000;0.5800;0.6100;0.6367;0.6720;0.7167;0.7667;0.8200;0.8667;0.8967;0.9167;1.0000" values="0.02;0.02;0.16;0.36;0.52;0.62;0.42;0.52;0.32;0.12;0.03;0.22;0.42;0.44;0.32;0.58;0.76;0.56;0.54;0.48;0.32;0.12;0.03;0.02"/>
+    <polygon points="541.3,269.9 374.3,561 708.9,561" fill="#d8f3f8" filter="url(#halo)" opacity="0.95"/>
+    <polygon points="541.3,269.9 374.3,561 708.9,561" fill="#f4fcff" filter="url(#haloNear)"/>
+  </g>
+  <g clip-path="url(#prismClip)" opacity="0.02">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear" keyTimes="0.0000;0.1133;0.1440;0.1700;0.2200;0.2800;0.3000;0.3467;0.3833;0.4167;0.4367;0.4633;0.5000;0.5800;0.6100;0.6367;0.6720;0.7167;0.7667;0.8200;0.8667;0.8967;0.9167;1.0000" values="0.02;0.02;0.16;0.36;0.52;0.62;0.42;0.52;0.32;0.12;0.03;0.22;0.42;0.44;0.32;0.58;0.76;0.56;0.54;0.48;0.32;0.12;0.03;0.02"/>
+    <use href="#prism" fill="url(#prismLight)"/>
+    <ellipse cx="524" cy="400" rx="78" ry="46" fill="#ffffff" opacity="0.22" filter="url(#soft)">
+      <animate attributeName="cx" dur="15s" repeatCount="indefinite" calcMode="spline"
+        keyTimes="0;0.18;0.32;0.46;0.62;0.78;1"
+        keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"
+        values="512;556;506;560;510;546;512"/>
+    </ellipse>
+  </g>
+  <g clip-path="url(#prismClip)" opacity="0.7">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear" keyTimes="0.0000;0.1133;0.1733;0.3733;0.4333;0.4800;0.5933;0.6400;0.8267;0.9133;1.0000" values="0.7;0.7;1;0.95;0.65;0.85;0.85;1;0.9;0.65;0.7"/>
+    <use href="#prism" fill="none" stroke="#b7e0ea" stroke-width="16" filter="url(#edgeBlur)"/>
+  </g>
+  <g clip-path="url(#prismClip)" opacity="1">
+    <animate attributeName="opacity" dur="15s" repeatCount="indefinite" calcMode="linear" keyTimes="0.0000;0.0760;0.1147;0.4453;0.4520;0.4800;0.5600;0.6013;0.9253;0.9320;0.9520;1.0000" values="1;1;0;0;1;0.85;0.8;0;0;1;1;1"/>
+    <ellipse cx="496" cy="400" rx="32" ry="8" fill="url(#entryBlob)"/>
+    <line x1="467" y1="399" x2="540" y2="404" stroke="url(#entryFade)" stroke-width="8" stroke-linecap="round" filter="url(#entryBlur)"/>
+    <line x1="530" y1="406" x2="624" y2="388" stroke="#cfe8f0" stroke-width="10" stroke-linecap="round" opacity="0.28" filter="url(#entryBlur)"/>
+  </g>
+  <g clip-path="url(#specClip)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" dur="15s" repeatCount="indefinite"
+        calcMode="linear" keyTimes="0.0000;0.4747;0.5367;0.5933;0.6213;1.0000" values="0,0;0,0;0,-11;0,-11;0,0;0,0"/>
+      <use href="#bands" filter="url(#specBloom)" opacity="0.42"/>
+      <use href="#bands"/>
+    </g>
+  </g>
+  <g clip-path="url(#beamClip)">
+    <line x1="-2" y1="517.8" x2="467.3" y2="399" stroke="#ffffff" stroke-width="4" stroke-linecap="butt"/>
+  </g>
+  <use href="#prism" fill="none" stroke="url(#edgeGrad)" stroke-width="3.1" stroke-linejoin="miter" stroke-miterlimit="8" filter="url(#hair)"/>
+</svg>

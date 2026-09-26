@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <radialGradient id="flare" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.22" stop-color="#e6f9ff" stop-opacity="0.75"/>
+      <stop offset="0.55" stop-color="#7fd2ea" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#4aa8cc" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="body" x1="538" y1="270" x2="538" y2="566" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b2230"/>
+      <stop offset="0.5" stop-color="#010b12"/>
+      <stop offset="1" stop-color="#061c26"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="384" y1="270" x2="700" y2="566" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d8eef6"/>
+      <stop offset="0.45" stop-color="#8fb8c6"/>
+      <stop offset="1" stop-color="#c8e2ea"/>
+    </linearGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cdefff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#cdefff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="haze" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18"/>
+    </filter>
+    <filter id="mist" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000"/>
+
+  <g opacity="1">
+    <animate attributeName="opacity" dur="5s" repeatCount="indefinite" keyTimes="0;0.44;0.58;0.90;1" values="1;1;0;0;1"/>
+    <polygon points="538,270 700,566 384,566" fill="none" stroke="#5f93a6" stroke-width="24" opacity="0.35" filter="url(#haze)"/>
+    <polygon points="538,270 700,566 384,566" fill="url(#body)"/>
+    <polygon points="538,270 700,566 384,566" fill="none" stroke="url(#rim)" stroke-width="3" stroke-linejoin="round" filter="url(#soft)"/>
+    <line x1="396" y1="566" x2="688" y2="566" stroke="#d4e8f0" stroke-width="4.5" opacity="0.95" filter="url(#soft)"/>
+  </g>
+
+  <g opacity="0">
+    <animate attributeName="opacity" dur="5s" repeatCount="indefinite" keyTimes="0;0.44;0.58;0.90;1" values="0;0;1;1;0"/>
+    <g opacity="0.8">
+      <polygon points="384,566 392,570 262,816 236,812" fill="url(#ray)"/>
+      <polygon points="700,566 692,570 822,816 848,812" fill="url(#ray)"/>
+      <polygon points="530,560 542,560 508,752 496,752" fill="url(#ray)" opacity="0.7"/>
+      <polygon points="538,560 550,560 584,752 572,752" fill="url(#ray)" opacity="0.7"/>
+    </g>
+    <polygon points="538,270 700,566 384,566" fill="#031420" fill-opacity="0.55"/>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+      <path d="M538,270 L700,566 L384,566 Z" stroke="#e8fbff" stroke-width="5"/>
+      <path d="M538,270 L552,552 M384,566 L552,552 M700,566 L552,552" stroke="#9adcee" stroke-width="3.5" opacity="0.95"/>
+    </g>
+    <g>
+      <circle cx="538" cy="270" r="30" fill="url(#flare)">
+        <animate attributeName="opacity" dur="1.25s" repeatCount="indefinite" values="0.55;1;0.55" keyTimes="0;0.5;1"/>
+      </circle>
+      <circle cx="384" cy="566" r="24" fill="url(#flare)">
+        <animate attributeName="opacity" dur="1.25s" repeatCount="indefinite" values="0.5;1;0.5" keyTimes="0;0.5;1"/>
+      </circle>
+      <circle cx="700" cy="566" r="24" fill="url(#flare)">
+        <animate attributeName="opacity" dur="1.25s" repeatCount="indefinite" values="0.5;1;0.5" keyTimes="0;0.5;1"/>
+      </circle>
+      <path d="M538,232 L538,308 M506,270 L570,270" stroke="#eafbff" stroke-width="2" opacity="0.75" filter="url(#soft)">
+        <animate attributeName="opacity" dur="1.25s" repeatCount="indefinite" values="0.4;0.85;0.4" keyTimes="0;0.5;1"/>
+      </path>
+    </g>
+  </g>
+
+  <g>
+    <path d="M0,514 L472,396 L612,396" pathLength="1000" fill="none" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft)" stroke-dasharray="1000 1000">
+      <animate attributeName="stroke-dashoffset" dur="5s" repeatCount="indefinite" keyTimes="0;0.20;0.27;0.30;0.46;0.50;0.57;0.70;0.77;0.80;0.94;0.97;1" values="0;0;920;920;1000;1000;0;0;920;920;1000;0;0"/>
+    </path>
+    <circle cx="472" cy="396" r="14" fill="url(#flare)">
+      <animate attributeName="opacity" dur="5s" repeatCount="indefinite" keyTimes="0;0.20;0.27;0.30;0.46;0.50;0.57;0.70;0.77;0.80;0.94;0.97;1" values="1;1;0;0;0;0;1;1;0;0;0;1;1"/>
+    </circle>
+  </g>
+
+  <g transform="translate(610,402)">
+    <g>
+      <animate attributeName="opacity" dur="5s" repeatCount="indefinite" keyTimes="0;0.22;0.30;0.48;0.56;0.72;0.80;0.95;1" values="1;1;0;0;1;1;0;0;1"/>
+      <animateTransform attributeName="transform" type="scale" dur="5s" repeatCount="indefinite" keyTimes="0;0.22;0.34;0.46;0.56;0.72;0.84;0.94;1" values="1;1;0.72;0.72;1;1;0.72;0.72;1"/>
+      <g filter="url(#mist)">
+        <polygon points="-17,-34 470,40 470,58 -11.3,-22.8" fill="#ef1420"/>
+        <polygon points="-11.3,-22.8 470,58 470,76 -5.7,-11.7" fill="#f78200"/>
+        <polygon points="-5.7,-11.7 470,76 470,94 0,-0.5" fill="#fcdd00"/>
+        <polygon points="0,-0.5 470,94 470,112 5.7,10.7" fill="#2fc24c"/>
+        <polygon points="5.7,10.7 470,112 470,130 11.3,21.8" fill="#0ea5e5"/>
+        <polygon points="11.3,21.8 470,130 470,148 17,33" fill="#8655d2"/>
+      </g>
+      <circle cx="0" cy="0" r="16" fill="url(#flare)"/>
+    </g>
+  </g>
+</svg>

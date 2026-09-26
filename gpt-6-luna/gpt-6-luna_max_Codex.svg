@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <title>The Dark Side of the Moon</title>
+  <desc>A cool white beam meets a glass prism and opens into seven colored rays against a black field.</desc>
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07171e" stop-opacity=".78"/>
+      <stop offset=".46" stop-color="#02090d" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#07151b" stop-opacity=".62"/>
+    </linearGradient>
+    <linearGradient id="transmitted" x1="466" y1="400" x2="604" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".92"/>
+      <stop offset=".45" stop-color="#e7fdff" stop-opacity=".76"/>
+      <stop offset="1" stop-color="#d6fbff" stop-opacity=".68"/>
+    </linearGradient>
+    <radialGradient id="prismAtmosphere" cx="50%" cy="38%" r="48%">
+      <stop offset="0" stop-color="#0b3942" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="edgeGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="beamGlow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+    <g id="spectrum">
+      <path d="M596 374 C760 386 925 410 1080 438 L1080 454 C925 430 760 405 596 382 Z" fill="#ff352c"/>
+      <path d="M596 378 C760 394 925 421 1080 454 L1080 470 C925 443 760 413 596 386 Z" fill="#ff8b1c"/>
+      <path d="M596 382 C760 402 925 434 1080 470 L1080 486 C925 456 760 421 596 390 Z" fill="#fff329"/>
+      <path d="M596 386 C760 410 925 447 1080 486 L1080 502 C925 469 760 429 596 394 Z" fill="#68f044"/>
+      <path d="M596 390 C760 419 925 460 1080 502 L1080 518 C925 482 760 437 596 398 Z" fill="#1de8eb"/>
+      <path d="M596 394 C760 427 925 473 1080 518 L1080 534 C925 495 760 445 596 402 Z" fill="#218cff"/>
+      <path d="M596 398 C760 435 925 486 1080 534 L1080 551 C925 509 760 453 596 406 Z" fill="#a474ed"/>
+    </g>
+  </defs>
+
+  <rect width="1080" height="1080" fill="#000000"/>
+  <ellipse cx="540" cy="420" rx="350" ry="250" fill="url(#prismAtmosphere)"/>
+
+  <path d="M0 518 L466 400" fill="none" stroke="#d8fdff" stroke-width="9" opacity=".25" filter="url(#beamGlow)"/>
+  <use href="#spectrum" opacity=".48" filter="url(#softGlow)"/>
+  <polygon points="540,270 374,562 710,562" fill="none" stroke="#54dff1" stroke-width="12" opacity=".34" filter="url(#edgeGlow)"/>
+
+  <use href="#spectrum"/>
+  <path d="M0 518 L466 400" fill="none" stroke="#f5feff" stroke-width="2.3"/>
+
+  <polygon points="540,270 374,562 710,562" fill="url(#glass)"/>
+  <path d="M466 397 C514 389 559 380 600 372 L604 383 C560 392 515 401 466 404 Z" fill="url(#transmitted)"/>
+
+  <polygon points="540,270 374,562 710,562" fill="none" stroke="#9cefff" stroke-width="4" opacity=".28" filter="url(#edgeGlow)"/>
+  <polygon points="540,270 374,562 710,562" fill="none" stroke="#d8fbff" stroke-width="2.2"/>
+  <path d="M374 562 L710 562" fill="none" stroke="#a9f3ff" stroke-width="1.5" opacity=".7"/>
+
+  <circle cx="466" cy="400" r="8" fill="#c5fbff" opacity=".48" filter="url(#edgeGlow)"/>
+  <circle cx="466" cy="400" r="2.2" fill="#ffffff"/>
+</svg>
